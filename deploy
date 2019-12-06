@@ -1,3 +1,4 @@
 #!/bin/bash
 
-cp -r config/* ~/.config/
+mkdir -p ~/.config/ && cp -r config/* ~/.config/
+mkdir -p ~/.emacs.d/ && cp -r emacs/* ~/.emacs.d/

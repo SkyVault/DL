@@ -4,3 +4,8 @@ matterbridge 		Bridges discord and IRC
 zathura			Document viewer
 zathura-pdf-mupdf	Pdf extension for Zathura
 zathura-djvu		Djvu extension for Zathura
+rambox-bin		Messenger client
+alsa-firmware		Audio engine
+alsa-lib		Audio library
+alsa-plugins		Audio addons, tools like alsamixer amixer etc...
+pulseaudio-alsa		Link between alsa and pulse
