@@ -1,4 +1,35 @@
 #!/bin/bash
 
-mkdir -p ~/.config/ && cp -r config/* ~/.config/
-mkdir -p ~/.emacs.d/ && cp -r emacs/* ~/.emacs.d/
+function deploy_dotfiles {
+    echo "Deploying dotfiles"
+    mkdir -p ~/.config/ && cp -r config/* ~/.config/
+    mkdir -p ~/.emacs.d/ && cp -r emacs/* ~/.emacs.d/
+}
+
+function install_packages {
+    echo "Installing packages"
+
+    # pacman -Sy
+    sudo pacman -S yay --needed --noconfirm
+
+    packages=$(awk '{print $1}' 'packages' | tr "\n" " ")
+
+    for package in $packages; do
+	yay -S $package --needed --noconfirm
+    done
+}
+
+function install_everything {
+    install_packages
+    deploy_dotfiles
+
+    echo "Installing oh-my-zsh"
+    # sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+    cp .zshrc ~/.zshrc
+}
+
+case $1 in
+    install) install_everything;;
+    *) deploy_dotfiles;;
+esac

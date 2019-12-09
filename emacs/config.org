@@ -72,9 +72,9 @@ if it hasn't been installed
    Color scheme
    
    #+BEGIN_SRC emacs-lisp
-   (load-theme 'wheatgrass t)
+   ; (load-theme 'wheatgrass t)
    #+END_SRC
-
+   
 * Emacs behaviour
   
   Disable the backup files that emacs creates, we always use version control so its not that useful to have the backup files.
@@ -131,7 +131,7 @@ if it hasn't been installed
      (evil-leader/set-leader ",")
      (evil-leader/set-key
        "w" 'save-buffer
-       "f" 'helm-find-files
+       "f" 'projectile-find-file
        "r" 'compile))
      
    (use-package evil-goggles
@@ -145,6 +145,46 @@ if it hasn't been installed
    #+END_SRC
 
 ** UI
+   
+   Status bar
+   
+   #+BEGIN_SRC emacs-lisp
+   (use-package doom-modeline
+     :ensure t
+     :hook (after-init . doom-modeline-mode)
+     :config
+     (setq doom-modeline-height 10)
+     (setq doom-modeline-project-detection 'project)
+     (setq doom-modeline-buffer-file-name-style 'truncate-upto-project))
+   #+END_SRC
+   
+   Color scheme
+   
+   #+BEGIN_SRC emacs-lisp
+   (use-package afternoon-theme
+     :ensure t
+     :config
+     (load-theme 'afternoon t))
+   #+END_SRC
+   
+   Font stuff
+   
+   #+BEGIN_SRC emacs-lisp
+   (use-package hasklig-mode
+     :ensure t
+     :config
+     (set-face-attribute 'default nil
+       :family "Hasklig"
+       :height 140
+       :weight 'normal
+       :width 'normal)
+     (set-face-attribute 'mode-line nil
+       :family "Hasklig"
+       :height 80
+       :weight 'normal
+       :width 'normal)
+     (hasklig-mode))
+   #+END_SRC
    
    Adds rainbow delimiters useful for large code blocks/lisps and many other reasons.
 
@@ -434,7 +474,10 @@ if it hasn't been installed
     
     #+BEGIN_SRC emacs-lisp
     (use-package fsharp-mode
-      :ensure t)
+      :defer t
+      :ensure t
+      :config
+      (setq inferior-fsharp-program "/usr/bin/fsharpi --readline-"))
     #+END_SRC
     
 *** Typescript

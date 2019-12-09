@@ -1,2 +1,2 @@
 # DL
-Dustin's Linux setup and window manager
+Dustin's configs and dotfiles
