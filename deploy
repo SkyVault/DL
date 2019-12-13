@@ -4,6 +4,9 @@ function deploy_dotfiles {
     echo "Deploying dotfiles"
     mkdir -p ~/.config/ && cp -r config/* ~/.config/
     mkdir -p ~/.emacs.d/ && cp -r emacs/* ~/.emacs.d/
+
+    cp zshrc ~/.zshrc
+    cp xinitrc ~/.xinitrc
 }
 
 function install_packages {
@@ -26,7 +29,6 @@ function install_everything {
     echo "Installing oh-my-zsh"
     # sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-    cp .zshrc ~/.zshrc
 }
 
 case $1 in

@@ -2,6 +2,8 @@ i3-gaps			i3 tiling window manager
 i3blocks		Used for the status bar
 i3lock			Locker
 i3status		Another status bar
+sxhkd			Simple X hotkey daemon
+dmenu
 xdotool
 xorg-server
 xorg-server-common

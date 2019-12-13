@@ -77,6 +77,30 @@ if it hasn't been installed
    
 * Emacs behaviour
   
+  Globally scale the text in all buffers
+  
+  #+BEGIN_SRC emacs-lisp
+  (define-globalized-minor-mode 
+    global-text-scale-mode
+    text-scale-mode
+    (lambda () (text-scale-mode 1)))
+  
+  (defun global-text-scale-adjust (inc) (interactive)
+    (text-scale-set 1)
+    (kill-local-variable 'text-scale-mode-amount)
+    (setq-default text-scale-mode-amount (+ text-scale-mode-amount inc))
+    (global-text-scale-mode 1))
+    
+  (global-set-key (kbd "M-0")
+                  '(lambda () (interactive)
+                     (global-text-scale-adjust (- text-scale-mode-amount))
+                     (global-text-scale-mode -1)))
+  (global-set-key (kbd "M-+")
+                  '(lambda () (interactive) (global-text-scale-adjust 1)))
+  (global-set-key (kbd "M--")
+                  '(lambda () (interactive) (global-text-scale-adjust -1)))
+  #+END_SRC
+  
   Disable the backup files that emacs creates, we always use version control so its not that useful to have the backup files.
 
   #+BEGIN_SRC emacs-lisp
@@ -175,12 +199,12 @@ if it hasn't been installed
      :config
      (set-face-attribute 'default nil
        :family "Hasklig"
-       :height 140
+       :height 110
        :weight 'normal
        :width 'normal)
      (set-face-attribute 'mode-line nil
        :family "Hasklig"
-       :height 80
+       :height 88
        :weight 'normal
        :width 'normal)
      (hasklig-mode))
