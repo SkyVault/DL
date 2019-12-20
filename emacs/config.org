@@ -77,6 +77,31 @@ if it hasn't been installed
    
 * Emacs behaviour
   
+  Auto compile CTags file
+  
+  #+BEGIN_SRC emacs-lisp
+  (setq tags-revert-without-query 1)
+  (add-hook 'after-save-hook 'projectile-regenerate-tags)
+
+  (defun build-ctags ()
+    (interactive)
+    (message "building project tags")
+    (let ((root (eproject-root)))
+	(shell-command
+	    (concat "ctags -e -R --extra=+fq --exclude=.git -f " root "TAGS " root)))
+    (visit-project-tags)
+    (message "tags built successfully"))
+
+  (defun visit-project-tags ()
+    (interactive)
+    (let ((tags-file (concat (eproject-root) "TAGS")))
+	(visit-tags-table tags-file)
+	(message (concat "Loaded " tags-file))))
+  #+END_SRC
+
+  #+RESULTS:
+  : visit-project-tags
+  
   Globally scale the text in all buffers
   
   #+BEGIN_SRC emacs-lisp
@@ -544,6 +569,13 @@ if it hasn't been installed
       (require 'slime-asdf))
     #+END_SRC
 
+*** Clojure
+
+    #+BEGIN_SRC emacs-lisp
+    (use-package cider
+      :ensure t)
+    #+END_SRC
+
 ** Auto completion and syntax stuff
    
    Language server based error checking
@@ -575,3 +607,4 @@ if it hasn't been installed
      (setq company-minimum-prefix-length 1)
      (setq company-tooltip-align-annotations t))
    #+END_SRC
+   
