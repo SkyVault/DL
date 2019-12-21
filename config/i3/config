@@ -22,6 +22,10 @@ bindsym $mod+Return exec st
 bindsym $mod+q kill
 bindsym $mod+d exec dmenu_run
 
+# Send application to scratchpad
+bindsym $mod+minus scratchpad show
+bindsym $mod+Shift+minus move scratchpad
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
