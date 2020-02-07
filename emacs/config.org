@@ -98,9 +98,6 @@ if it hasn't been installed
 	(visit-tags-table tags-file)
 	(message (concat "Loaded " tags-file))))
   #+END_SRC
-
-  #+RESULTS:
-  : visit-project-tags
   
   Globally scale the text in all buffers
   
@@ -131,6 +128,12 @@ if it hasn't been installed
   #+BEGIN_SRC emacs-lisp
   (setq make-backup-files nil)
   (setq auto-save-default nil)
+  #+END_SRC
+  
+  Grep tools
+  
+  #+BEGIN_SRC emacs-lisp
+  (global-set-key (kbd "C-c e") 'helm-projectile)
   #+END_SRC
 
 * Language styles
@@ -181,6 +184,7 @@ if it hasn't been installed
      (evil-leader/set-key
        "w" 'save-buffer
        "f" 'projectile-find-file
+       "b" 'helm-mini
        "r" 'compile))
      
    (use-package evil-goggles
@@ -346,6 +350,18 @@ if it hasn't been installed
      :config
      (global-hl-todo-mode))
    #+END_SRC
+   
+   Listing file stuff
+   
+   #+BEGIN_SRC emacs-lisp
+   (use-package imenu-list
+     :ensure t
+     :config
+     (global-set-key (kbd "C-'") #'imenu-list-smart-toggle)
+     (setq imenu-list-focus-after-activation t)
+     (setq imenu-list-auto-resize t))
+
+   #+END_SRC
 
 ** Git
    
@@ -376,6 +392,9 @@ if it hasn't been installed
      (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
      (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
      (projectile-mode +1))
+     
+   (use-package helm-projectile
+     :ensure t)
    #+END_SRC
 
    Which key shows you the possible next command you could do, so if you type C+x then wait, a list of possible next commands will show up, with a description.
@@ -408,6 +427,30 @@ if it hasn't been installed
    #+END_SRC
 
 ** Org
+   
+   Org babel languages
+   
+   #+BEGIN_SRC emacs-lisp
+   (defadvice org-babel-execute-src-block (around load-language nil activate)
+    "Load language if needed"
+    (let ((language (org-element-property :language (org-element-at-point))))
+    (unless (cdr (assoc (intern language) org-babel-load-languages))
+    (add-to-list 'org-babel-load-languages (cons (intern language) t))
+    (org-babel-do-load-languages 'org-babel-load-languages org-babel-load-languages))
+    ad-do-it))
+   #+END_SRC
+   
+   Auto complete todos that have sub todo's all done
+   
+   #+BEGIN_SRC emacs-lisp
+   (defun org-summary-todo (n-done n-not-done)
+   "Switch entry to DONE when all subentries are done, to TODO otherwise."
+   (let (org-log-done org-log-states)   ; turn off logging
+(org-todo (if (= n-not-done 0) "DONE" "TODO"))))
+
+   (add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
+   #+END_SRC
+
    
    Sexy bullets for org mode
    
@@ -500,6 +543,7 @@ if it hasn't been installed
       (add-hook 'python-mode-hook 'jedi:setup))
     #+END_SRC
 
+*** Haskell
 *** OCaml
 
     #+BEGIN_SRC emacs-lisp

@@ -4,9 +4,11 @@ function deploy_dotfiles {
     echo "Deploying dotfiles"
     mkdir -p ~/.config/ && cp -r config/* ~/.config/
     mkdir -p ~/.emacs.d/ && cp -r emacs/* ~/.emacs.d/
+    mkdir -p ~/.scripts/
 
     cp zshrc ~/.zshrc
     cp xinitrc ~/.xinitrc
+    cp scripts/* ~/.scripts/ 
 }
 
 function install_packages {
