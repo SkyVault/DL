@@ -92,5 +92,8 @@ export PATH=$PATH:$HOME/Android/Sdk/tools/bin
 export PATH=$PATH:$HOME/Android/Sdk/build-tools/29.0.2
 export PATH=$PATH:$HOME/.nimble/bin
 
+export DISCORD_BOT_TOKEN="Njg2MDM4NzI2Mjk5NzQ2NTI4.XmUdDw.B3SPLqCrmpd2W8HXpAbHh8iJvoY"
+export DISCORD_SERVER_NAME="458330762538909708"
+
 # opam configuration
 test -r /home/dustin/.opam/opam-init/init.zsh && . /home/dustin/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
