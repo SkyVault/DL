@@ -72,8 +72,13 @@ if it hasn't been installed
    Color scheme
    
    #+BEGIN_SRC emacs-lisp
-   ; (load-theme 'wheatgrass t)
+   (use-package moe-theme
+     :ensure t
+     :config)
    #+END_SRC
+
+   #+RESULTS:
+   : t
    
 * Emacs behaviour
   
@@ -198,19 +203,7 @@ if it hasn't been installed
    #+END_SRC
 
 ** UI
-   
-   Status bar
-   
-   #+BEGIN_SRC emacs-lisp
-   (use-package doom-modeline
-     :ensure t
-     :hook (after-init . doom-modeline-mode)
-     :config
-     (setq doom-modeline-height 10)
-     (setq doom-modeline-project-detection 'project)
-     (setq doom-modeline-buffer-file-name-style 'truncate-upto-project))
-   #+END_SRC
-   
+
    Color scheme
    
    #+BEGIN_SRC emacs-lisp
@@ -220,25 +213,69 @@ if it hasn't been installed
      (load-theme 'afternoon t))
    #+END_SRC
    
-   Font stuff
-   
+   Fira code support
+
    #+BEGIN_SRC emacs-lisp
-   (use-package hasklig-mode
-     :ensure t
-     :config
-     (set-face-attribute 'default nil
-       :family "Hasklig"
-       :height 110
-       :weight 'normal
-       :width 'normal)
-     (set-face-attribute 'mode-line nil
-       :family "Hasklig"
-       :height 88
-       :weight 'normal
-       :width 'normal)
-     (hasklig-mode))
+   (defun fira-code-mode--make-alist (list)
+    "Generate prettify-symbols alist from LIST."
+    (let ((idx -1))
+	(mapcar
+	(lambda (s)
+	(setq idx (1+ idx))
+	(let* ((code (+ #Xe100 idx))
+	    (width (string-width s))
+	    (prefix ())
+	    (suffix '(?\s (Br . Br)))
+	    (n 1))
+	(while (< n width)
+	(setq prefix (append prefix '(?\s (Br . Bl))))
+	(setq n (1+ n)))
+	(cons s (append prefix suffix (list (decode-char 'ucs code))))))
+	list)))
+
+    (defconst fira-code-mode--ligatures
+    '("www" "**" "***" "**/" "*>" "*/" "\\\\" "\\\\\\"
+	"{-" "[]" "::" ":::" ":=" "!!" "!=" "!==" "-}"
+	"--" "---" "-->" "->" "->>" "-<" "-<<" "-~"
+	"#{" "#[" "##" "###" "####" "#(" "#?" "#_" "#_("
+	".-" ".=" ".." "..<" "..." "?=" "??" ";;" "/*"
+	"/**" "/=" "/==" "/>" "//" "///" "&&" "||" "||="
+	"|=" "|>" "^=" "$>" "++" "+++" "+>" "=:=" "=="
+	"===" "==>" "=>" "=>>" "<=" "=<<" "=/=" ">-" ">="
+	">=>" ">>" ">>-" ">>=" ">>>" "<*" "<*>" "<|" "<|>"
+	"<$" "<$>" "<!--" "<-" "<--" "<->" "<+" "<+>" "<="
+	"<==" "<=>" "<=<" "<>" "<<" "<<-" "<<=" "<<<" "<~"
+	"<~~" "</" "</>" "~@" "~-" "~=" "~>" "~~" "~~>" "%%"
+	"x" ":" "+" "+" "*"))
+
+    (defvar fira-code-mode--old-prettify-alist)
+
+    (defun fira-code-mode--enable ()
+	"Enable Fira Code ligatures in current buffer."
+	(setq-local fira-code-mode--old-prettify-alist prettify-symbols-alist)
+	(setq-local prettify-symbols-alist (append (fira-code-mode--make-alist fira-code-mode--ligatures) fira-code-mode--old-prettify-alist))
+	(prettify-symbols-mode t))
+
+    (defun fira-code-mode--disable ()
+	"Disable Fira Code ligatures in current buffer."
+	(setq-local prettify-symbols-alist fira-code-mode--old-prettify-alist)
+	(prettify-symbols-mode -1))
+
+    (define-minor-mode fira-code-mode
+	"Fira Code ligatures minor mode"
+	:lighter " Fira Code"
+	(setq-local prettify-symbols-unprettify-at-point 'right-edge)
+	(if fira-code-mode
+	    (fira-code-mode--enable)
+	    (fira-code-mode--disable)))
+
+    (defun fira-code-mode--setup ()
+	"Setup Fira Code Symbols"
+	(set-fontset-font t '(#Xe100 . #Xe16f) "Fira Code Symbol"))
+
+    (provide 'fira-code-mode)
    #+END_SRC
-   
+
    Adds rainbow delimiters useful for large code blocks/lisps and many other reasons.
 
    #+BEGIN_SRC emacs-lisp
@@ -251,10 +288,10 @@ if it hasn't been installed
    Centers the buffer to the middle of the emacs window
 
    #+BEGIN_SRC emacs-lisp
-   (use-package automargin
-     :ensure t
-     :config
-     (automargin-mode))
+     ;; (use-package automargin
+     ;;   :ensure t
+     ;;   :config
+     ;;   (automargin-mode))
    #+END_SRC
 
    Side bar file manager / project viewer
@@ -618,6 +655,7 @@ if it hasn't been installed
     #+BEGIN_SRC emacs-lisp
     (use-package cider
       :ensure t)
+    (setq exec-path (append exec-path '("~/.scripts/")))
     #+END_SRC
 
 ** Auto completion and syntax stuff
