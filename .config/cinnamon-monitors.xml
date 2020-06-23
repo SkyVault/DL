@@ -1,0 +1,53 @@
+<monitors version="1">
+  <configuration>
+      <clone>no</clone>
+      <base_scale>1</base_scale>
+      <output name="DP-1">
+          <vendor>SPT</vendor>
+          <product>0x0c0d</product>
+          <serial>0x00000000</serial>
+          <width>2560</width>
+          <height>1080</height>
+          <rate>85.000000</rate>
+          <x>1600</x>
+          <y>0</y>
+          <scale>1.000000</scale>
+          <rotation>normal</rotation>
+          <reflect_x>no</reflect_x>
+          <reflect_y>no</reflect_y>
+          <primary>yes</primary>
+      </output>
+      <output name="HDMI-1">
+          <vendor>SAM</vendor>
+          <product>0x0c39</product>
+          <serial>0x00000000</serial>
+          <width>1600</width>
+          <height>900</height>
+          <rate>60.000000</rate>
+          <x>4160</x>
+          <y>0</y>
+          <scale>1.000000</scale>
+          <rotation>normal</rotation>
+          <reflect_x>no</reflect_x>
+          <reflect_y>no</reflect_y>
+          <primary>no</primary>
+      </output>
+      <output name="DP-2">
+          <vendor>HWP</vendor>
+          <product>0x305e</product>
+          <serial>0x01010101</serial>
+          <width>1600</width>
+          <height>900</height>
+          <rate>60.000000</rate>
+          <x>0</x>
+          <y>0</y>
+          <scale>1.000000</scale>
+          <rotation>normal</rotation>
+          <reflect_x>no</reflect_x>
+          <reflect_y>no</reflect_y>
+          <primary>no</primary>
+      </output>
+      <output name="DP-3">
+      </output>
+  </configuration>
+</monitors>

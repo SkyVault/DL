@@ -1,0 +1,3 @@
+[Bookmarks]
+[Recent]
+/home/dustin/.repos/Benis3D/resources/models/

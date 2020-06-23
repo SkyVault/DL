@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/dustin/.repos/DL/WM/dwm'
+let g:netrw_dirhist_2='/home/dustin/.config/vifm/scripts'
+let g:netrw_dirhist_1='/home/dustin/.config/vifm'
+let g:netrw_dirhist_0='/home/dustin/.repos/DL/WM/dwm'
+let g:netrw_dirhist_9='/home/dustin/.config/scripts'
+let g:netrw_dirhist_8='/home/dustin/.repos/DL/WM/dwm'
+let g:netrw_dirhist_7='/home/dustin/.repos/DL/WM'
+let g:netrw_dirhist_6='/home/dustin/.repos/DL'
+let g:netrw_dirhist_5='/home/dustin/.repos'
+let g:netrw_dirhist_4='/home/dustin/.repos/DL/WM/dwm'

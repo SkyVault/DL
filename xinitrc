@@ -1,6 +1,2 @@
-#!/bin/sh
-
-wal -R &
-sxhkd &
-
-exec i3
+#!/bin/sh 
+exec dwm

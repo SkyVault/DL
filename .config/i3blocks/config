@@ -1,0 +1,35 @@
+command=~/.scripts
+
+seperator_block_width=15
+markup=pango
+separator_block_width=10
+full_text=/
+separator=false
+align=center
+
+[window]
+command=xdotool getactivewindow getwindowname 2>/dev/null || echo "None"
+interval=1
+align=center
+
+[seperator]
+
+[weather]
+command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
+interval=3600
+color=#A4C2F4
+
+[seperator]
+
+[date]
+label=🕐 
+command=date +"%r"
+interval=1
+
+[seperator]
+
+[volume]
+label=♪ 
+command=~/.scripts/volume
+interval=2
+signal=10

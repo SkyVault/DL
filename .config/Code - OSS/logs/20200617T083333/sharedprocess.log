@@ -1,0 +1,9 @@
+[2020-06-17 08:33:37.457] [sharedprocess] [info] main {"machineId":"7bfcda3c52a423d0cb90e318ca878b4ec05336a2088076d188fbe66586e92214","windowId":2}
+[2020-06-17 08:33:37.489] [sharedprocess] [error] [File Watcher (node.js)] Error: ENOENT: no such file or directory, stat '/home/dustin/.config/Code - OSS/User/snippets'
+[2020-06-17 08:33:46.810] [sharedprocess] [info] Installing extension: ms-vscode.cpptools
+[2020-06-17 08:33:47.397] [sharedprocess] [info] Downloaded extension: ms-vscode.cpptools /tmp/0d239265-074c-443b-96b9-514c7bcb6250
+[2020-06-17 08:33:47.559] [sharedprocess] [info] Extracted extension to /home/dustin/.vscode-oss/extensions/.ms-vscode.cpptools-0.28.3: ms-vscode.cpptools
+[2020-06-17 08:33:47.559] [sharedprocess] [info] Renamed to /home/dustin/.vscode-oss/extensions/ms-vscode.cpptools-0.28.3
+[2020-06-17 08:33:47.561] [sharedprocess] [info] Installation completed. ms-vscode.cpptools
+[2020-06-17 08:33:47.802] [sharedprocess] [info] Extensions installed successfully: ms-vscode.cpptools
+[2020-06-17 08:34:17.481] [sharedprocess] [info] Starting to clean up unused language packs.

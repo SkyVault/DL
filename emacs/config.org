@@ -86,7 +86,11 @@ if it hasn't been installed
   
   #+BEGIN_SRC emacs-lisp
   (setq tags-revert-without-query 1)
-  (add-hook 'after-save-hook 'projectile-regenerate-tags)
+  ; (add-hook 'after-save-hook 'projectile-regenerate-tags)
+  (global-set-key (kbd "C-]") 
+    (lambda []
+      (projectile-regenerate-tags)
+      (evil-jump-to-tag)))
 
   (defun build-ctags ()
     (interactive)
@@ -690,3 +694,16 @@ if it hasn't been installed
      (setq company-tooltip-align-annotations t))
    #+END_SRC
    
+** Applications
+   
+   Web feed
+
+   #+BEGIN_SRC emacs-lisp
+   (use-package elfeed
+       :ensure t
+       :config
+       (global-set-key (kbd "C-x w") 'elfeed)
+       (setq elfeed-feeds
+	'("http://nullprogram.com/feed/"
+	  "http://planet.emacsen.org/atom.xml")))
+   #+END_SRC

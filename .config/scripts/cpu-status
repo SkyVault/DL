@@ -1,0 +1,8 @@
+#!/bin/bash
+perc=$(ps -A -o pcpu | tail -n+2 | paste -sd+ | bc) 
+border=2
+height=$((20-$border*2))
+pixels=$(echo "$perc $height" | awk '{print ($1/100.0)*$2}' )
+pixels=$(printf "%.0f" "$pixels") 
+y=$(($height-$pixels)) 
+echo "Cpu: ^c#ffffff^^r0,$border,6,$height^^c#ff0000^^r0,$(($y+$border)),6,$pixels^^f6^^d^" 
