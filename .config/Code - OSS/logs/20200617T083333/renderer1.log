@@ -1,5 +1,0 @@
-[2020-06-17 08:34:38.936] [renderer1] [error] ioctl(2) failed, ENOTTY: Error: ioctl(2) failed, ENOTTY
-    at UnixTerminal.resize (/usr/lib/code/node_modules.asar/node-pty/lib/unixTerminal.js:238:13)
-    at e.resize (file:///usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3444:659)
-    at e.setDimensions (file:///usr/lib/code/out/vs/workbench/workbench.desktop.main.js:4860:261)
-    at e._resize (file:///usr/lib/code/out/vs/workbench/workbench.desktop.main.js:4954:653)

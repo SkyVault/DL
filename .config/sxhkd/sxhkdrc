@@ -1,6 +1,0 @@
-super + Return
-      $TERMINAL
-super + d
-      dmenu_run
-super + x
-      dmenu_run

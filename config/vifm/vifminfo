@@ -26,48 +26,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/dustin/Pictures/Wallpapers
-	RetroWave.jpg
-1
-d/home/dustin/Pictures
-	VideoSeriesIntro
-1
-d/home/dustin/Pictures/VideoSeriesIntro
-	subscribe_and_like.aseprite
-5
-d/home/dustin/Pictures
-	VideoSeriesIntro
-1
-d/home/dustin
-	Public
-10
-d/home/dustin/Public
-	..
-0
-d/home/dustin
-	Music
-7
-d/home/dustin/Music
-	..
-0
-d/home/dustin
-	Documents
-5
-d/home/dustin/Documents
-	Overture
-19
-d/home/dustin/Documents/Overture
-	Overture.csproj
-11
-d/home/dustin/Documents
-	STLAnimator
-25
-d/home/dustin
-	Documents
-5
-d/home
-	..
-0
 d/
 	home
 4
@@ -326,6 +284,48 @@ d/home/dustin/Projects/Ps1Rpg
 d/home/dustin/Projects/Ps1Rpg/Assets
 	texture_set_1.png
 1
+d/home/dustin
+	Pictures
+5
+d/home/dustin/Pictures
+	Wallpapers
+1
+d/home/dustin/Pictures/Wallpapers
+	3440x1440 Album  Dump (23).jpg
+23
+d/home/dustin/Pictures
+	Wallpapers
+1
+d/home/dustin/Pictures/Wallpapers
+	3440x1440 Album  Dump (24).jpg
+24
+d/home/dustin/.repos
+	Harp
+3
+d/home/dustin/.repos/Harp
+	src
+2
+d/home/dustin/.repos/Harp/src
+	tests.c
+2
+d/home/dustin/.repos/Harp
+	tests
+3
+d/home/dustin/.repos/Harp/tests
+	..
+0
+d/home/dustin/.repos/Harp
+	..
+0
+d/home/dustin/.repos
+	janet
+7
+d/home/dustin/Pictures
+	Wallpapers
+1
+d/home/dustin/Pictures/Wallpapers
+	Found an old VHS tape in my garage, so it inspired me to create some 329 VHS-inspired wallpapers [10240x2880] [More in the Comments].png
+28
 d
 
 # Right window history (oldest to newest):
@@ -384,8 +384,13 @@ D
 :fileviewer *.png
 :!wal -i RetroWave.jpg
 :rename
-:q
 :mkdir Assets
+:cd .repo
+:cd ~/.repos
+:q
+:!feh --bg-fill %f
+:wal -i %f
+:!wal -i %f
 
 # Search history (oldest to newest):
 /Via
@@ -423,13 +428,17 @@ D
 /ass
 /proj
 /Ps
+/pic
+/.repos
+/Harp
 
 # Prompt history (oldest to newest):
 
 # Local filter history (oldest to newest):
 
 # Registers:
-""/home/dustin/Documents/HellHeimRpg/assets/textures/texture_set_1.png
+""/home/dustin/.repos/Harp/src/tests.c
+""/home/dustin/.repos/Harp/src/tests.h
 
 # Directory stack (oldest to newest):
 
