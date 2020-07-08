@@ -585,6 +585,18 @@ if it hasn't been installed
     #+END_SRC
 
 *** Haskell
+    
+    Haskell mode
+    
+    #+BEGIN_SRC emacs-lisp
+    
+    ; C-c C-l
+    
+    (use-package haskell-mode
+      :ensure t)
+
+    #+END_SRC
+
 *** OCaml
 
     #+BEGIN_SRC emacs-lisp
