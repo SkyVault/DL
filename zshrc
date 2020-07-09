@@ -4,7 +4,7 @@ export ZSH="/home/dustin/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
 
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 
 plugins=(git)
@@ -27,6 +27,13 @@ alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 alias fm="~/.config/vifm/scripts/vifmrun"
 alias yt2mp3="youtube-dl -4 -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0"
+alias gw3m="w3m -4 google.com"
+alias web="w3m -4 'https://sjmulder.nl/en/textonly.html'"
+alias v="nvim"
+alias vi="nvim"
+alias vim="nvim"
+alias sbcl="rlwrap sbcl"
+alias lisp="rlwrap sbcl"
 
 alias edwm="cd $HOME/.repos/DL/WM/dwm/"
 
@@ -50,3 +57,5 @@ export DISCORD_SERVER_NAME="458330762538909708"
 
 # opam configuration
 test -r /home/dustin/.opam/opam-init/init.zsh && . /home/dustin/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

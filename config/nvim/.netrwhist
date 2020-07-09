@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/home/dustin/.repos/moneys/app'
+let g:netrw_dirhist_1='/home/dustin/.repos/moneys'
+let g:netrw_dirhist_0='/home/dustin/.repos/Harp/src'
+let g:netrw_dirhist_9='/home/dustin/.repos/Harp'
+let g:netrw_dirhist_8='/home/dustin/.repos/DL/WM/dwm'
+let g:netrw_dirhist_7='/home/dustin/.repos/Harp/docs'
+let g:netrw_dirhist_6='/home/dustin/.repos/Harp'
+let g:netrw_dirhist_5='/home/dustin/.repos/DL/WM/dwm'
+let g:netrw_dirhist_4='/home/dustin/.repos/DL/WM'
+let g:netrw_dirhist_3='/home/dustin/.repos/DL'

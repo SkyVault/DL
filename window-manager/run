@@ -1,0 +1,8 @@
+#!/bin/bash
+
+make || exit 1;
+
+killall Xephyr
+
+Xephyr -br -ac -noreset -screen 1280x720 :8 & disown
+sleep 0.5 && DISPLAY=:8 ./dwm

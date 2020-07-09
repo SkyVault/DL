@@ -1,0 +1,3 @@
+#!/bin/bash
+
+pdfs=$(find $HOME -name *.pdf)

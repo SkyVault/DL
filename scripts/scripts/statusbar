@@ -1,0 +1,8 @@
+#!/bin/bash 
+
+delem="^c#666666^:::^d^"
+
+while true; do
+    xsetroot -name " 🎵 $(music-status) $delem 🔊 $(get-volume)% $delem 💻 $(cpu-status) $delem $(date +"%A $delem 📅 %b-%d-%G $delem 🕒 %I:%M:%S") "
+    sleep 0.1
+done
