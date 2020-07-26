@@ -1,0 +1,5 @@
+#!/bin/bash
+
+wal -i "$1"
+
+killall dwm && sleep 0.1 && notify-send "Changed wall paper to $1"

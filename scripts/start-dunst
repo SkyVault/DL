@@ -1,0 +1,12 @@
+#!/bin/bash 
+[ -f "$HOME/.cache/wal/colors.sh" ] && . "$HOME/.cache/wal/colors.sh"
+
+dunst -lf  "${color0:-#ffffff}" \
+      -lb  "${color1:-#eeeeee}" \
+      -lfr "${color2:-#dddddd}" \
+      -nf  "${color0:-#cccccc}" \
+      -nb  "${color1:-#bbbbbb}" \
+      -nfr "${color2:-#aaaaaa}" \
+      -cf  "${color6:-#999999}" \
+      -cb  "${color7:-#888888}" \
+      -cfr "${color8:-#777777}" > /dev/null 2>&1 &

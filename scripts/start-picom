@@ -1,3 +1,2 @@
-#!/bin/bash
-
+#!/bin/bash 
 picom --experimental-backends --backend glx --config ~/.config/picom/config

@@ -13,7 +13,7 @@ static const char col_gray1[] = "#222222";
 static const char col_gray2[] = "#444444";
 static const char col_gray3[] = "#bbbbbb";
 static const char col_gray4[] = "#eeeeee";
-static const char col_main[] = "#007788";
+static const char col_main[]  = "#008877";
 
 static const char *colors[][3] = {
     /*               fg         bg         border   */
@@ -53,33 +53,17 @@ static const int smartgaps =
 
 static const int swallowfloating = 0;
 
-#ifndef DEBUG
 static const char *const autostart[] = {
-    "dunst",
-    NULL,
-    "start-picom",
-    NULL,
-    "mpd",
-    NULL,
-    "st",
-    NULL,
-    "default-display",
-    NULL,
-    "wal -R",
-    NULL,
-    "statusbar",
-    NULL,
-    "notify-send",
-    "💻Welcome Dustin!",
-    NULL,
+    "start-dunst", NULL,
+    "start-picom", NULL,
+    "mpd", NULL,
+    "st", NULL,
+    "usb-watch", NULL,
+    "wal -R", NULL,
+    "statusbar", NULL,
+    "notify-send", "💻Welcome Dustin!", NULL,
     NULL,
 };
-#else
-static const char *const autostart[] = {
-    "st", NULL,          "default-display",  NULL, "wal -R", NULL, "statusbar",
-    NULL, "notify-send", "💻Welcome Dustin!", NULL, NULL,
-};
-#endif // DEBUG
 
 /* tagging */
 static const char *tags[] = {"1", "2", "3", "4", "5", "6", "7", "8"};
@@ -159,7 +143,7 @@ static char dmenumon[2] =
     "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = {
     "dmenu_run", "-m",      dmenumon, "-fn",    dmenufont, "-nb",     col_gray1,
-    "-nf",       col_gray3, "-sb",    col_main, "-sf",     col_gray4, NULL};
+    "-nf",       col_gray3, "-sb", "#000000", "-sf",     col_gray4, NULL};
 static const char *termcmd[] = {"st", NULL};
 static const char *dmenuemojicmd[] = {"dmenu-emoji", NULL};
 
@@ -169,6 +153,9 @@ static const char *scratchpadcmd[] = {"s", "st", "-t", "scratchpad", NULL};
 
 static const char *volume_up_cmd[] = {"vol", "set", VOLUME_STEP "%+", NULL};
 static const char *volume_down_cmd[] = {"vol", "set", VOLUME_STEP "%-", NULL};
+
+static const char *spawn_browser[] = {"qutebrowser"};
+static const char *spawn_browser_with_bookmark[] = { "dmenu-bookmark", "|", "qutebrowser"};
 
 static Key keys[] = {
     /* modifier                     key        function        argument */
@@ -262,6 +249,11 @@ static Key keys[] = {
      XK_Left,
      switchtag,
      {.ui = SWITCHTAG_LEFT | SWITCHTAG_TAG | SWITCHTAG_VIEW}},
+
+    /* Spawn commands */
+
+    {MODKEY | ControlMask, XK_b, spawn, {.v = spawn_browser}},
+    {MODKEY | ControlMask | ShiftMask, XK_b, spawn, {.v = spawn_browser_with_bookmark}},
 };
 
 /* button definitions */

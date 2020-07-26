@@ -6,12 +6,11 @@
 # if a music file or pdf, it will download,
 # otherwise it opens link in browser.
 
-BROWSER="firefox"
-
 # If no url given. Opens browser. For using script as $BROWSER.
 [ -z "$1" ] && { "$BROWSER"; exit; }
 
 case "$1" in
+	*pdf ) zathura "$1" >/dev/null 2>&1 ;;
 	*mkv|*webm|*mp4|*youtube.com/watch*|*youtube.com/playlist*|*youtu.be*|*hooktube.com*|*bitchute.com*)
 		setsid -f mpv -quiet "$1" >/dev/null 2>&1 ;;
 	*png|*jpg|*jpe|*jpeg|*gif)
@@ -20,5 +19,5 @@ case "$1" in
 		setsid -f tsp curl -LO "$1" >/dev/null 2>&1 ;;
 	*)
 		if [ -f "$1" ]; then "$TERMINAL" -e "$EDITOR" "$1"
-	else setsid -f "$BROWSER" "$1" >/dev/null 2>&1; fi ;;
+		else $($BROWSER "$1"); fi ;;
 esac

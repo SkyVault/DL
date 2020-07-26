@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# change this if you want sounds elsewhere
+SNDDIR=$HOME/.config/scripts/media/;
+# check frequency (default 0.25 seconds)
+CHECKFREQ=0.25
+
+
+# Do not edit below this line
+# --------------------------------------------------
+DEVCOUNT=`lsusb | wc -l | awk '{ print $1 }'`
+OLDDEVCOUNT=$DEVCOUNT;
+
+while(true) do
+  sleep $CHECKFREQ;
+  DEVCOUNT=`lsusb | wc -l | awk '{ print $1 }'`
+  if [ $DEVCOUNT -gt $OLDDEVCOUNT ]; then
+    play `echo $SNDDIR`sound.wav;
+  else if [ $DEVCOUNT -lt $OLDDEVCOUNT ]; then
+    play `echo $SNDDIR`sound.wav;
+  fi fi
+  OLDDEVCOUNT=$DEVCOUNT;
+done

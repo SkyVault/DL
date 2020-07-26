@@ -1107,7 +1107,7 @@ void drawbar(Monitor *m) {
   x = drw_text(drw, x, 0, w, bh, lrpad / 2, m->ltsymbol, 0);
 
   // Draw tab groups
-  drw_rect(drw, x, 0, m->ww - sw - x, bh, 1, 1);
+  // drw_rect(drw, x, 0, m->ww - sw - x, bh, 1, 1);
 
   if ((w = m->ww - tw - x) > bh) {
     if (m->sel) {
@@ -2147,8 +2147,11 @@ void setmfact(const Arg *arg) {
 void get_color_from_pywal(char *out) {
   FILE *fi = fopen("/home/dustin/.cache/wal/sequences", "r");
 
-  if (fi != NULL) {
-    sprintf(out, "%s", col_main);
+  if (fi == NULL) {
+    for (int i = 0; i < 7; i++) {
+        out[i] = col_main[i];
+    }
+    out[8]='\0'; 
     return;
   }
 
@@ -2171,8 +2174,10 @@ void get_color_from_pywal(char *out) {
       n++;
 
       if (n == 2) { // TODO(Dustin): Dont hardcode dummy
-        char *end = it + 8;
-        sprintf(out, "%.*s", (int)(end - it), it);
+        for (int i = 0; i < 7; i++)
+          out[i] = (*(it+i));
+        out[8] = '\0';
+
         break;
       }
     }
@@ -2227,9 +2232,8 @@ void setup(void) {
   cursor[CurResize] = drw_cur_create(drw, XC_sizing);
   cursor[CurMove] = drw_cur_create(drw, XC_fleur);
 
-  char buff[256] = {0};
+  static char buff[256] = "#008860";
   get_color_from_pywal(buff);
-  buff[strlen(buff) - 1] = '\0';
 
   for (int i = 0; i < strlen(buff); i++)
     buff[i] = tolower(buff[i]);

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+grep -Rn --exclude-dir=node_modules --exclude=tags "$1" "$2"
