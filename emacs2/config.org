@@ -1,0 +1,435 @@
+#+ Dustin's emacs config file
+
+* Package Config
+
+We use a lot of packages so lets include all 3 of the most used
+package repos 
+
+  #+BEGIN_SRC emacs-lisp
+  (require 'package)
+  (setq package-enable-at-startup nil) ; for a faster startup
+  (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+  (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
+  (package-initialize)
+  #+END_SRC
+
+Installing use-package for my package manager, only
+if it hasn't been installed
+
+  #+BEGIN_SRC emacs-lisp
+  (unless (package-installed-p 'use-package)
+    (package-refresh-contents)
+    (package-install 'use-package))
+
+  (eval-when-compile
+    (require 'use-package))
+  #+END_SRC
+
+* Emacs Behaviour
+** General
+
+   Centers the buffer to the middle of the emacs window
+
+   #+BEGIN_SRC emacs-lisp
+   (use-package perfect-margin
+     :ensure t
+     :config
+     (perfect-margin-mode 1))
+   #+END_SRC
+
+   #+BEGIN_SRC emacs-lisp
+   (use-package which-key
+     :ensure t
+     :config
+     (which-key-mode)
+     (which-key-setup-side-window-bottom))
+   #+END_SRC
+
+** Evil mode
+
+I am completely lost without my vim bindings
+
+  #+BEGIN_SRC emacs-lisp
+  (use-package evil
+    :ensure t
+    :config (evil-mode 1))
+  #+END_SRC
+  
+Evil surround for vim-surround like controls
+
+  #+BEGIN_SRC emacs-lisp
+  (use-package evil-surround
+    :ensure t
+    :config (global-evil-surround-mode 1))
+  #+END_SRC
+
+Evil leader keys
+
+  #+BEGIN_SRC emacs-lisp
+  (use-package evil-leader
+    :ensure t
+    :config 
+    (global-evil-leader-mode 1)
+    (evil-leader/set-leader ",")
+    (evil-leader/set-key
+      "w" 'save-buffer
+      "f" 'projectile-find-file
+      "b" 'helm-mini
+      "r" 'compile))
+  #+END_SRC
+
+  #+BEGIN_SRC emacs-lisp
+  (use-package evil-goggles
+    :ensure t
+    :config 
+    (evil-goggles-mode)
+    (setq evil-goggles-pulse t)
+    (evil-goggles-use-diff-faces))
+  #+END_SRC
+
+Org mode bindings for evil
+
+  #+BEGIN_SRC emacs-lisp
+  (use-package org-evil
+    :ensure t
+    :config
+    (add-hook 'org-mode-hook
+      (lambda () (org-evil-mode 1))))
+  #+END_SRC
+  
+** Projectile / Helm
+   
+   #+BEGIN_SRC emacs-lisp
+   (use-package projectile
+     :ensure t
+     :config
+     (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+     (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+     (projectile-mode +1))
+     
+   (use-package helm-projectile
+     :ensure t)
+   #+END_SRC
+   
+   #+BEGIN_SRC emacs-lisp
+   (use-package helm
+     :ensure t
+     :config
+     (helm-mode 1)
+       (global-set-key (kbd "M-x") #'helm-M-x)
+       (global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)
+       (global-set-key (kbd "C-x C-f") #'helm-find-files))
+   #+END_SRC
+
+** Magit
+   
+Magit is a magical git frontend
+
+   #+BEGIN_SRC emacs-lisp
+   (use-package magit
+     :ensure t)
+   #+END_SRC
+
+Makes magit work well with evil mode
+   
+   #+BEGIN_SRC emacs-lisp
+   (use-package evil-magit
+     :ensure t
+     :config
+     (evil-mode 1))
+   #+END_SRC
+
+** Treemacs
+   
+Treemacs is a file manager in the side panel
+
+   #+BEGIN_SRC emacs-lisp
+   (use-package treemacs
+     :ensure t
+     :defer t
+     :init
+     (with-eval-after-load 'winum
+       (define-key winum-keymap (kbd "M-0") #'treemacs-select-window))
+     :config
+       (progn
+	 (setq treemacs-collapse-dirs 
+	   (if (executable-find "python3") 3 0)
+	     treemacs-deferred-git-apply-delay      0.5
+	     treemacs-display-in-side-window        t
+	     treemacs-eldoc-display                 t
+	     treemacs-file-event-delay              5000
+	     treemacs-file-follow-delay             0.2
+	     treemacs-follow-after-init             t
+	     treemacs-git-command-pipe              ""
+	     treemacs-goto-tag-strategy             'refetch-index
+	     treemacs-indentation                   2
+	     treemacs-indentation-string            " "
+	     treemacs-is-never-other-window         nil
+	     treemacs-max-git-entries               5000
+	     treemacs-missing-project-action        'ask
+	     treemacs-no-png-images                 nil
+	     treemacs-no-delete-other-windows       t
+	     treemacs-project-follow-cleanup        nil
+	     treemacs-persist-file                  (expand-file-name ".cache/treemacs-persist" user-emacs-directory)
+	     treemacs-recenter-distance             0.1
+	     treemacs-recenter-after-file-follow    nil
+	     treemacs-recenter-after-tag-follow     nil
+	     treemacs-recenter-after-project-jump   'always
+	     treemacs-recenter-after-project-expand 'on-distance
+	     treemacs-show-cursor                   nil
+	     treemacs-show-hidden-files             t
+	     treemacs-silent-filewatch              nil
+	     treemacs-silent-refresh                nil
+	     treemacs-sorting                       'alphabetic-desc
+	     treemacs-space-between-root-nodes      t
+	     treemacs-tag-follow-cleanup            t
+	     treemacs-tag-follow-delay              1.5
+	     treemacs-width                         35)
+
+	;; The default width and height of the icons is 22 pixels. If you are
+	;; using a Hi-DPI display, uncomment this to double the icon size.
+	;;(treemacs-resize-icons 44)
+
+	(treemacs-follow-mode t)
+	(treemacs-filewatch-mode t)
+	(treemacs-fringe-indicator-mode t)
+	(pcase (cons (not (null (executable-find "git")))
+		    (not (null (executable-find "python3"))))
+	(`(t . t)
+	(treemacs-git-mode 'deferred))
+	(`(t . _)
+	(treemacs-git-mode 'simple))))
+    :bind
+    (:map global-map
+	    ("M-0"       . treemacs-select-window)
+	    ("C-x t 1"   . treemacs-delete-other-windows)
+	    ("C-x t t"   . treemacs)
+	    ("C-x t B"   . treemacs-bookmark)
+	    ("C-x t C-t" . treemacs-find-file)
+	    ("C-x t M-t" . treemacs-find-tag)))
+
+   (use-package treemacs-evil
+     :after treemacs evil
+     :ensure t)
+
+   (use-package treemacs-projectile
+     :after treemacs projectile
+     :ensure t)
+
+   (use-package treemacs-icons-dired
+     :after treemacs dired
+     :ensure t
+     :config (treemacs-icons-dired-mode))
+
+   (use-package treemacs-magit
+     :after treemacs magit
+     :ensure t)
+   #+END_SRC
+
+* Emacs Visuals
+** UI
+*** General
+
+    #+BEGIN_SRC emacs-lisp
+    (tool-bar-mode -1)
+    (menu-bar-mode -1)
+    (scroll-bar-mode -1)
+
+    (show-paren-mode 1)
+    (save-place-mode 1)
+
+    (setq inhibit-startup-screen t)
+    #+END_SRC
+
+    Transparency control
+    
+    #+BEGIN_SRC emacs-lisp
+    (defun toggle-transparency ()
+	(interactive)
+	(let ((alpha (frame-parameter nil 'alpha)))
+	    (set-frame-parameter
+	    nil 'alpha
+	    (if (eql (cond ((numberp alpha) alpha)
+			    ((numberp (cdr alpha)) (cdr alpha))
+			    ;; Also handle undocumented (<active> <inactive>) form.
+			    ((numberp (cadr alpha)) (cadr alpha)))
+		    100)
+		'(90 . 70) '(100 . 100)))))
+    (global-set-key (kbd "C-c t") 'toggle-transparency)
+    (toggle-transparency) ;; Defaults to transparent
+    #+END_SRC
+
+*** Font
+
+We use fira code everywhere because its a nice font   
+
+    #+BEGIN_SRC emacs-lisp
+    (defun fira-code-mode--make-alist (list)
+     "Generate prettify-symbols alist from LIST."
+     (let ((idx -1))
+    	(mapcar
+    	(lambda (s)
+    	(setq idx (1+ idx))
+    	(let* ((code (+ #Xe100 idx))
+    	    (width (string-width s))
+    	    (prefix ())
+    	    (suffix '(?\s (Br . Br)))
+    	    (n 1))
+    	(while (< n width)
+    	(setq prefix (append prefix '(?\s (Br . Bl))))
+    	(setq n (1+ n)))
+    	(cons s (append prefix suffix (list (decode-char 'ucs code))))))
+    	list)))
+
+    (defconst fira-code-mode--ligatures
+    '("www" "**" "***" "**/" "*>" "*/" "\\\\" "\\\\\\"
+	"{-" "[]" "::" ":::" ":=" "!!" "!=" "!==" "-}"
+	"--" "---" "-->" "->" "->>" "-<" "-<<" "-~"
+	"#{" "#[" "##" "###" "####" "#(" "#?" "#_" "#_("
+	".-" ".=" ".." "..<" "..." "?=" "??" ";;" "/*"
+	"/**" "/=" "/==" "/>" "//" "///" "&&" "||" "||="
+	"|=" "|>" "^=" "$>" "++" "+++" "+>" "=:=" "=="
+	"===" "==>" "=>" "=>>" "<=" "=<<" "=/=" ">-" ">="
+	">=>" ">>" ">>-" ">>=" ">>>" "<*" "<*>" "<|" "<|>"
+	"<$" "<$>" "<!--" "<-" "<--" "<->" "<+" "<+>" "<="
+	"<==" "<=>" "<=<" "<>" "<<" "<<-" "<<=" "<<<" "<~"
+	"<~~" "</" "</>" "~@" "~-" "~=" "~>" "~~" "~~>" "%%"
+	"x" ":" "+" "+" "*"))
+
+    (defvar fira-code-mode--old-prettify-alist)
+
+    (defun fira-code-mode--enable ()
+	"Enable Fira Code ligatures in current buffer."
+	(setq-local fira-code-mode--old-prettify-alist prettify-symbols-alist)
+	(setq-local prettify-symbols-alist (append (fira-code-mode--make-alist fira-code-mode--ligatures) fira-code-mode--old-prettify-alist))
+	(prettify-symbols-mode t))
+
+    (defun fira-code-mode--disable ()
+	"Disable Fira Code ligatures in current buffer."
+	(setq-local prettify-symbols-alist fira-code-mode--old-prettify-alist)
+	(prettify-symbols-mode -1))
+
+    (define-minor-mode fira-code-mode
+	"Fira Code ligatures minor mode"
+	:lighter " Fira Code"
+	(setq-local prettify-symbols-unprettify-at-point 'right-edge)
+	(if fira-code-mode
+	    (fira-code-mode--enable)
+	    (fira-code-mode--disable)))
+
+    (defun fira-code-mode--setup ()
+	"Setup Fira Code Symbols"
+	(set-fontset-font t '(#Xe100 . #Xe16f) "Fira Code Symbol"))
+
+    (provide 'fira-code-mode)
+    #+END_SRC
+    
+*** Theme
+
+    #+BEGIN_SRC emacs-lisp
+    (use-package dracula-theme
+      :ensure t
+      :config
+      (load-theme 'dracula t))
+    #+END_SRC
+    
+*** Code
+
+   #+BEGIN_SRC emacs-lisp
+   (use-package rainbow-delimiters
+     :ensure t
+     :config
+     (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
+   #+END_SRC
+
+Sexy bullets for org mode
+
+   #+BEGIN_SRC emacs-lisp
+   (use-package org-bullets
+     :ensure t
+     :init
+     (setq org-bullets-bullet-list
+     '("◉" "◎" "<img draggable=\"false\" class=\"emoji\" alt=\"⚫\" src=\"https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/26ab.svg\">" "○" "►" "◇"))
+     :config
+     (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+   #+END_SRC
+   
+*** Mode line
+
+For simplicities sake, we're using doom-modeline, it looks great and has all the 
+functionality I need.
+
+  #+BEGIN_SRC
+  (use-package doom-modeline
+    :ensure t
+    :config 
+    (doom-modeline-mode 1)
+    (setq doom-modeline-height 30)
+    (setq doom-modeline-bar-width 3)
+    (setq doom-modeline-project-detection 'project)
+    (setq doom-modeline-enable-word-count t)
+    (setq doom-modeline-lsp t))
+  #+END_SRC
+
+* Programming Languages
+** Company mode
+   
+   #+BEGIN_SRC emacs-lisp
+   (use-package company
+     :ensure t
+     :config
+     (add-hook 'after-init-hook 'global-company-mode)
+     (eval-after-load
+       'company
+       '(add-to-list 'company-backends 'company-omnisharp))
+     (add-hook 'csharp-mode-hook #'company-mode)
+     (setq company-idle-delay 0)
+     (setq company-minimum-prefix-length 1)
+     (setq company-tooltip-align-annotations t))
+   #+END_SRC
+
+** Lsp mode (Language server)
+   
+    #+BEGIN_SRC emacs-lisp
+    (setq lsp-keymap-prefix "s-l")
+
+    (use-package lsp-mode
+	:ensure t
+	:hook ((python-mode . lsp)
+		(lsp-mode . lsp-enable-which-key-integration)))
+
+    (use-package lsp-ui :commands lsp-ui-mode)
+    (use-package helm-lsp :commands helm-lsp-workspace-symbol)
+    (use-package lsp-treemacs :commands lsp-treemacs-errors-list)
+    #+END_SRC
+
+** C/C++
+   
+    #+BEGIN_SRC emacs-lisp
+    (use-package ccls
+	:ensure t
+	:hook ((c-mode c++-mode objc-mode cuda-mode) .
+	       (lambda () (require 'ccls) (lsp)))
+	:config 
+	(setq ccls-executable "/usr/bin/ccls")
+	(ccls-code-lens-mode)
+	(ccls-navigate "D") ;; roughly sp-down-sexp
+	(ccls-navigate "L")
+	(ccls-navigate "R")
+	(ccls-navigate "U"))
+
+    #+END_SRC
+	
+   
+    #+BEGIN_SRC emacs-lisp
+    (use-package flycheck
+      :ensure t
+      :init (global-flycheck-mode)
+      :config
+      (add-hook 'c++-mode-hook
+        (lambda ()
+          (put 'flycheck-disabled-checkers 'safe-local-variable #'listp)
+    	 (setq flycheck-clang-standard-library "libstdc++")
+    	 (setq flycheck-clang-language-standard "c++17"))))
+    #+END_SRC
