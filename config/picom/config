@@ -3,18 +3,24 @@ vsync = true;
 xrender-sync-fence = "true";
 glx-swap-method = -1;
 
+opacity-rule = [
+  "60:class_g = 'i3bar'",
+  "90:class_g = 'jetbrains-webstorm'",
+  "90:class_g = 'jetbrains-idea'",
+  "90:class_g = 'jetbrains-clion'",
+  "40:class_g = 'st'"
+]
+
 shadow = true;
 shadow-radius = 5;
-shadow-offset-x = 2;
-shadow-offset-y = 2;
-shadow-opacity = 0.5;
+shadow-offset-x = 3;
+shadow-offset-y = 3;
+shadow-opacity = 0.4;
 shadow-ignore-shaped = false;
 
-shadow-exclude = [ 
-    "class_g * = 'dwm'",
+shadow-exclude = [
     "_NET_WM_WINDOW_TYPE@:32a * = '_NET_WM_WINDOW_TYPE_DOCK'",
 ];
-
 
 blur-background = true;
 blur-background-frame = true;

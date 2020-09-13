@@ -1,35 +1,27 @@
-command=~/.scripts
-
-seperator_block_width=15
+command=~/.local/bin/statusbar/$BLOCK_NAME
+separator_block_width=32
 markup=pango
-separator_block_width=10
-full_text=/
-separator=false
-align=center
 
-[window]
-command=xdotool getactivewindow getwindowname 2>/dev/null || echo "None"
-interval=1
-align=center
+[memory]
+interval=30
 
-[seperator]
+[internet]
+intervall=10
 
-[weather]
-command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
-interval=3600
-color=#A4C2F4
+[cpu]
+interval=15
 
-[seperator]
-
-[date]
-label=🕐 
-command=date +"%r"
-interval=1
-
-[seperator]
+[battery]
+interval=5
 
 [volume]
-label=♪ 
-command=~/.scripts/volume
-interval=2
+interval=once
 signal=10
+
+[disk]
+interval=60
+command=disk /
+
+[clock]
+label=📅
+interval=30

@@ -1,0 +1,4 @@
+case "$SRANDRD_ACTION" in
+    "DP-1 connected") $HOME/.screenlayout/docked.sh;;
+    "DP-1 disconnected") $HOME/.screenlayout/laptop.sh;;
+esac
