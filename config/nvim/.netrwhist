@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/dustin/Repos/Love2DBook'
+let g:netrw_dirhist_5='/home/dustin/Repos/Harp'
 let g:netrw_dirhist_4='/home/dustin/Repos/work/appointment-scheduling/stories/01_welcome'
 let g:netrw_dirhist_3='/home/dustin/Repos/work/appointment-scheduling/stories'
 let g:netrw_dirhist_2='/home/dustin/Repos/work/appointment-scheduling'

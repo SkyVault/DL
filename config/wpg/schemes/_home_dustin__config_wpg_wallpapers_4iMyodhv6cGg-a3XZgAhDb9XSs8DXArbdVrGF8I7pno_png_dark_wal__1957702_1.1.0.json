@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/dustin/.config/wpg/wallpapers/4iMyodhv6cGg-a3XZgAhDb9XSs8DXArbdVrGF8I7pno.png",
+    "alpha": "100",
+
+    "special": {
+        "background": "#140f0a",
+        "foreground": "#d0d5d8",
+        "cursor": "#d0d5d8"
+    },
+    "colors": {
+        "color0": "#140f0a",
+        "color1": "#648EA8",
+        "color2": "#7EA5C1",
+        "color3": "#93A2AA",
+        "color4": "#AFB2B3",
+        "color5": "#C8BAAB",
+        "color6": "#D6C9B5",
+        "color7": "#d0d5d8",
+        "color8": "#919597",
+        "color9": "#648EA8",
+        "color10": "#7EA5C1",
+        "color11": "#93A2AA",
+        "color12": "#AFB2B3",
+        "color13": "#C8BAAB",
+        "color14": "#D6C9B5",
+        "color15": "#d0d5d8"
+    }
+}

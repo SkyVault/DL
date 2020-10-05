@@ -8,15 +8,20 @@ opacity-rule = [
   "90:class_g = 'jetbrains-webstorm'",
   "90:class_g = 'jetbrains-idea'",
   "90:class_g = 'jetbrains-clion'",
-  "40:class_g = 'st'"
+  "90:class_g = 'qutebrowser'",
+  "90:class_g = 'code - insiders'",
+  "90:class_g = 'Thunderbird'",
+  "50:class_g = 'st'"
 ]
 
-shadow = true;
+shadow = false;
 shadow-radius = 5;
 shadow-offset-x = 3;
 shadow-offset-y = 3;
 shadow-opacity = 0.4;
 shadow-ignore-shaped = false;
+
+# corner-radius = 12;
 
 shadow-exclude = [
     "_NET_WM_WINDOW_TYPE@:32a * = '_NET_WM_WINDOW_TYPE_DOCK'",

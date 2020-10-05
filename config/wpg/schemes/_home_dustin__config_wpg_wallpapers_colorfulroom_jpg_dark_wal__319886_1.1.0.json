@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/dustin/.config/wpg/wallpapers/colorfulroom.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#2b202d",
+        "foreground": "#edffff",
+        "cursor": "#edffff"
+    },
+    "colors": {
+        "color0": "#2b202d",
+        "color1": "#4f77cc",
+        "color2": "#7d88c5",
+        "color3": "#bd93bb",
+        "color4": "#89ccff",
+        "color5": "#c6bbcc",
+        "color6": "#e4dce5",
+        "color7": "#edffff",
+        "color8": "#b0c4cf",
+        "color9": "#4f77cc",
+        "color10": "#7d88c5",
+        "color11": "#bd93bb",
+        "color12": "#89ccff",
+        "color13": "#c6bbcc",
+        "color14": "#e4dce5",
+        "color15": "#edffff"
+    }
+}

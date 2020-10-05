@@ -8,7 +8,7 @@
 
 # #---Basic Definitions---# #
 set $inner_gaps 10
-set $outer_gaps 10
+set $outer_gaps 0
 set $term --no-startup-id $TERMINAL
 set $mod Mod4
 set $stoprec --no-startup-id dmenurecord kill
@@ -20,7 +20,7 @@ set $hibernate sudo -A systemctl suspend
 exec --no-startup-id flameshot
 
 # #---Gaps---# #
-for_window [class="^.*"] border pixel 4
+for_window [class="^.*"] border pixel 6
 gaps inner $inner_gaps
 gaps outer $outer_gaps
 
@@ -105,7 +105,8 @@ bindsym $mod+Shift+p		exec --no-startup-id mpc pause
 bindsym $mod+a			exec --no-startup-id ddspawn dropdowncalc -f mono:pixelsize=24
 bindsym $mod+Shift+a		exec $term -e pulsemixer
 
-bindsym $mod+d			exec --no-startup-id rofi -show run -theme /usr/share/rofi/themes/Pop-Dark.rasi
+# bindsym $mod+d			exec --no-startup-id rofi -show run -theme /usr/share/rofi/themes/Pop-Dark.rasi
+bindsym $mod+d			exec --no-startup-id dmenu_run
 bindsym $mod+Shift+d		gaps inner current set 0; gaps outer current set 0
 
 set $freeze Distraction-free mode (super+shift+f to reactivate bindings)
@@ -174,16 +175,16 @@ bindsym $mod+slash		split vertical ;; exec $term
 bindsym $mod+Shift+slash	kill
 bindsym $mod+backslash		workspace back_and_forth
 
-set $ws1 "1: COM"
-set $ws2 "2: DEV"
-set $ws3 "3: WWW"
-set $ws4 "4: TRM"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10: MUS"
+set $ws1 "1 💬"
+set $ws2 "2 🖥️"
+set $ws3 "3 🌎"
+set $ws4 "4 🤖"
+set $ws5 "5 💰"
+set $ws6 "6 🧠"
+set $ws7 "7 🗼"
+set $ws8 "8 🌮"
+set $ws9 "9 🐳"
+set $ws10 "10 🎵"
 
 bar {
 	font pango:Fira Code Retina 10
@@ -263,8 +264,6 @@ bindsym $mod+Ctrl+Right		move workspace to output right
 # Volume keys
 bindsym $mod+plus		exec --no-startup-id pulsemixer --change-volume +5 && pkill -RTMIN+10 i3blocks
 bindsym $mod+Shift+plus		exec --no-startup-id pulsemixer --change-volume +15 && pkill -RTMIN+10 i3blocks
-bindsym $mod+minus 		exec --no-startup-id pulsemixer --change-volume -5 && pkill -RTMIN+10 i3blocks
-bindsym $mod+Shift+minus	exec --no-startup-id pulsemixer --change-volume -15 && pkill -RTMIN+10 i3blocks
 bindsym $mod+less 		exec --no-startup-id mpc prev
 bindsym $mod+Shift+less		exec --no-startup-id mpc seek 0%
 bindsym $mod+greater		exec --no-startup-id mpc next

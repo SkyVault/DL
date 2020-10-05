@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/dustin/.config/wpg/wallpapers/zeqa6lbv05j51.png",
+    "alpha": "100",
+
+    "special": {
+        "background": "#101013",
+        "foreground": "#c2a09f",
+        "cursor": "#c2a09f"
+    },
+    "colors": {
+        "color0": "#101013",
+        "color1": "#343445",
+        "color2": "#50384B",
+        "color3": "#663A4F",
+        "color4": "#29504E",
+        "color5": "#2C5B66",
+        "color6": "#5B4C58",
+        "color7": "#c2a09f",
+        "color8": "#87706f",
+        "color9": "#343445",
+        "color10": "#50384B",
+        "color11": "#663A4F",
+        "color12": "#29504E",
+        "color13": "#2C5B66",
+        "color14": "#5B4C58",
+        "color15": "#c2a09f"
+    }
+}

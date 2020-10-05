@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/dustin/.config/wpg/wallpapers/beautiful.png",
+    "alpha": "100",
+    "special": {
+        "background": "#f0f5ee",
+        "foreground": "#182A13",
+        "cursor": "#182A13"
+    },
+    "colors": {
+        "color0": "#f0f5ee",
+        "color1": "#2C876B",
+        "color2": "#6EAD58",
+        "color3": "#5E9F6C",
+        "color4": "#97A66C",
+        "color5": "#23979B",
+        "color6": "#51B7AB",
+        "color7": "#182A13",
+        "color8": "#5f7358",
+        "color9": "#2C876B",
+        "color10": "#6EAD58",
+        "color11": "#5E9F6C",
+        "color12": "#97A66C",
+        "color13": "#23979B",
+        "color14": "#51B7AB",
+        "color15": "#182A13"
+    }
+}

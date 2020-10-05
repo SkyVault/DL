@@ -26,6 +26,7 @@ Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'kovetskiy/sxhkd-vim'
 Plug 'ap/vim-css-color'
+Plug 'lervag/vimtex'
 call plug#end()
 
 set bg=light
@@ -131,3 +132,6 @@ set clipboard+=unnamedplus
 if &diff
     highlight! link DiffText MatchParen
 endif
+
+" Tex config
+let g:tex_flavor = 'latex'

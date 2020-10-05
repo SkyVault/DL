@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/dustin/.config/wpg/wallpapers/vaporTowers.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#01010e",
+        "foreground": "#a1f9e7",
+        "cursor": "#a1f9e7"
+    },
+    "colors": {
+        "color0": "#01010e",
+        "color1": "#c83d6f",
+        "color2": "#ff667c",
+        "color3": "#43d486",
+        "color4": "#ffa97f",
+        "color5": "#fff179",
+        "color6": "#8075a4",
+        "color7": "#a1f9e7",
+        "color8": "#74b5a8",
+        "color9": "#c83d6f",
+        "color10": "#ff667c",
+        "color11": "#43d486",
+        "color12": "#ffa97f",
+        "color13": "#fff179",
+        "color14": "#8075a4",
+        "color15": "#a1f9e7"
+    }
+}

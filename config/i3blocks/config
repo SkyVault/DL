@@ -2,6 +2,9 @@ command=~/.local/bin/statusbar/$BLOCK_NAME
 separator_block_width=32
 markup=pango
 
+[weather]
+interval=190
+
 [memory]
 interval=30
 
@@ -24,4 +27,4 @@ command=disk /
 
 [clock]
 label=📅
-interval=30
+interval=5

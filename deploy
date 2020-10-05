@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# ln -s "$PWD/.config" "$HOME/.testconfig"
+ln -s "$PWD/config/newsboat" "$HOME/.config/newsboat"

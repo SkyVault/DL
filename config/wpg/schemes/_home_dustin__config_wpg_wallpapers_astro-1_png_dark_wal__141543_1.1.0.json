@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/dustin/.config/wpg/wallpapers/astro-1.png",
+    "alpha": "100",
+
+    "special": {
+        "background": "#353a40",
+        "foreground": "#defff1",
+        "cursor": "#defff1"
+    },
+    "colors": {
+        "color0": "#353a40",
+        "color1": "#6d7da3",
+        "color2": "#fe22f1",
+        "color3": "#5cb5c0",
+        "color4": "#99a7a8",
+        "color5": "#dea8b5",
+        "color6": "#08ffc1",
+        "color7": "#defff1",
+        "color8": "#ade4be",
+        "color9": "#6d7da3",
+        "color10": "#fe22f1",
+        "color11": "#5cb5c0",
+        "color12": "#99a7a8",
+        "color13": "#dea8b5",
+        "color14": "#08ffc1",
+        "color15": "#defff1"
+    }
+}

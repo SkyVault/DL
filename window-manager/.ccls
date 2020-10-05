@@ -1,6 +1,0 @@
--I
-include/
--I
-.
--std=c11
--fPIC
