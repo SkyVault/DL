@@ -2,3 +2,4 @@
 
 # ln -s "$PWD/.config" "$HOME/.testconfig"
 ln -s "$PWD/config/newsboat" "$HOME/.config/newsboat"
+ln -s "$PWD/vimwiki" "$HOME/vimwiki"
