@@ -1,0 +1,2 @@
+#!/bin/bash
+xlock -mode euler2d

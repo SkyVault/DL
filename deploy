@@ -1,5 +1,13 @@
 #!/bin/bash
 
-# ln -s "$PWD/.config" "$HOME/.testconfig"
-ln -s "$PWD/config/newsboat" "$HOME/.config/newsboat"
-ln -s "$PWD/vimwiki" "$HOME/vimwiki"
+ln -sfn "$PWD/xinitrc" "$HOME/.xinitrc"
+ln -sfn "$PWD/config/newsboat/" "$HOME/.config/newsboat"
+ln -sfn "$PWD/config/i3/" "$HOME/.config/i3"
+ln -sfn "$PWD/config/i3blocks/" "$HOME/.config/i3blocks"
+ln -sfn "$PWD/config/zathura/" "$HOME/.config/zathura"
+ln -sfn "$PWD/config/ncmpcpp/" "$HOME/.config/ncmpcpp"
+ln -sfn "$PWD/config/mpd/" "$HOME/.config/mpd"
+
+ln -sfn "$PWD/zprofile" "$HOME/.zprofile"
+ln -sfn "$PWD/start" "$HOME/.config/start"
+ln -sfn "$PWD/vimwiki" "$HOME/vimwiki"
