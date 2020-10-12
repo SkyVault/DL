@@ -7,7 +7,8 @@
 
 # Adds `~/.local/bin` to $PATH
 
-export DISCORD_BOT_TOKEN="Njg2MDM4NzI2Mjk5NzQ2NTI4.XmRZWg.-5jQHV9GTcYyMN3bDQtxIOgtW48"
+source '~/.env-nocheckin'
+
 export DISCORD_SERVER_NAME="Gamers North"
 
 export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':')"

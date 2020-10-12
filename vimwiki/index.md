@@ -25,6 +25,10 @@
 [Hybrid](hp-hybrid.md)
 [AA-Training](aa-training)
 
+[Highpoint Internal App](highpoint-internal-app.md)
+
+[EnrollmentTODOS](enrollment-todos.md)
+
 ## Love2D book
 
 [Notes](love2d-book-notes.md)

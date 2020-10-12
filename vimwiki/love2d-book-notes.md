@@ -6,6 +6,8 @@ Basic installation
 
 Intro to Lua the language
 
+    Lua is the programming language used by the love2d framework, lua is a simple, efficient, lightweight and embeddable scripting language. Lua is used in a lot of domains including web development, general purpose scripting and game engine scripting.
+
 Intro to tbe lua Stl
 
 Intro to Love2D
