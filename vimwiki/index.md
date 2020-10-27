@@ -9,6 +9,10 @@
 [DwarfForge](dwarf-forge.md)
 [Skippys Adventure](skippys.md)
 
+## The startup
+
+[Needs](the-startup-needs.md)
+
 ## YouTube
 
 [Schedule](youtube-schedule.md)
@@ -18,6 +22,7 @@
 
 ## Work
 
+[RAND](hp-rand.md)
 [Notes](hp-notes.md)
 [Daily Completed Tasks](work-completed-tasks.md)
 [Package Evaluation](package-evaluation.md)
@@ -32,3 +37,5 @@
 ## Love2D book
 
 [Notes](love2d-book-notes.md)
+
+Remove Major
