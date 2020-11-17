@@ -2,6 +2,7 @@
 
 ## Programming Projects
 
+[File Organizer](file-organizer-app.md)
 [Terminus RPG](terminus.md)
 [Harp Lang](harp-lang-design.md)
 [Gravy RPG](gravy-rpg.md)
@@ -29,6 +30,7 @@
 [Agile](hp-agile.md)
 [Hybrid](hp-hybrid.md)
 [AA-Training](aa-training)
+[Eval Transfer Credit](eval-transfer-credit.md)
 
 [Highpoint Internal App](highpoint-internal-app.md)
 
@@ -37,5 +39,3 @@
 ## Love2D book
 
 [Notes](love2d-book-notes.md)
-
-Remove Major

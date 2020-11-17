@@ -19,3 +19,13 @@ The only has 3 types of syntax
          | <let-expr>
          | <bin-op>
 ```
+
+```
+
+
+
+RULES:
+
+a block if it is a single expression can start with a ':', a progn will be a 'do done' block
+
+```
