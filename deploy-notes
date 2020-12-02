@@ -1,0 +1,4 @@
+#!/bin/bash
+
+ln -sfn "$PWD/org/" "$HOME/org"
+ln -sfn "$PWD/doom-emacs/" "$HOME/.doom.d"
