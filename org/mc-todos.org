@@ -1,0 +1,7 @@
+#+TITLE: Mc Todos
+
+* DONE change to viewed on {date}
+* DONE change message from id to full name
+* DONE group thread panel clearing
+* DONE fix the group ids blank thing
+* DONE Bug with the emplId
