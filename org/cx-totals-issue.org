@@ -1,0 +1,16 @@
+#+TITLE: Cx Totals Issue
+
+* Loation
+
+what-i-owe/components/App.js
+
+* Requirements
+
+AA0012so the MC search works on:
+exact/partial first name
+exact/partial last name
+exact/partial ID
+exact/partial subject
+Fails on: exact first name/last name
+Display the terms even if the total is 0, if there are no terms, then
+display the no outstanding charges

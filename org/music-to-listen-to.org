@@ -1,0 +1,22 @@
+#+TITLE: Music To Listen To
+
+* Albums
+1. ohms - deftones - 👍
+2. How im feeling now - Charlie Xcx
+3. Intronaut - Fluid Existential Inversions
+4. Suit for max brown - Jeff Parker
+5. Oneohthrix Point Never - Magic Oneohtrix Point Never
+6. Neptunian Maximalism - Éons  - 👍
+7. Autechre - Sign
+8. Duma - Duma - 👌𝜵
+
+| Name                   | Band                         | Genre   |
+|------------------------+------------------------------+---------|
+| Ohms                   | Deftones                     | Metal   |
+| How im feeling now     | Charlie XCX                  | Pop     |
+| intronaut              | Fluid Existential inversions | Unknown |
+| Suit for max brown     | Jeff parker                  | unknown |
+| Oneohthrix Point never | Magic Oneohtrix Point never  | unknown |
+| Neptunian maximalism   | Éons                         | Unknown |
+| Autechre               | sign                         | Unknown |
+| Duma                   | Duma                         | Unknown |

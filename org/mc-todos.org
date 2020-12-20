@@ -5,3 +5,4 @@
 * DONE group thread panel clearing
 * DONE fix the group ids blank thing
 * DONE Bug with the emplId
+* TODO Close button based on thread status

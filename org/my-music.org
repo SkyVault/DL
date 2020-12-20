@@ -1,0 +1,45 @@
+#+TITLE: My Music
+* Albums
+** Genere
+*** Hardcore Metal
+| Name                          | Artist                          |
+|-------------------------------+---------------------------------|
+| Pressure                      | Wage War                        |
+| Песни Смерти                  | Путь                            |
+| Discoveries                   | Northlane                       |
+| Talk Shit Get Kissed          | Brojob                          |
+| Tyrannical Heirarchy, Vol. 1  | Acrania                         |
+| Totalitarian Dystopia         | Acrania                         |
+| Die Without Hope              | Carnifex                        |
+| Slow Death                    | Carnifex                        |
+| The Diseased And The Poisoned | Carnifex                        |
+| Dead In My Arms               | Carnifex                        |
+| Immersion                     | Primitive Man                   |
+| Caustic                       | Primitive Man                   |
+| The Price of Existence        | All Shall Parish                |
+| Das Monster aus dem Shrank    | We Butter the Bread With Butter |
+| Desolation of Eden            | Chelsea Grin                    |
+| Self Inflicted                | Chelsea Grin                    |
+| Eternal Nightmare             | Chelsea Grin                    |
+| Nadir                         | Black Tongue                    |
+| Immortal                      | Lorna Shore                     |
+| How To Survive A Funeral      | Make Them Suffer                |
+| Neverbloom                    | Make Them Suffer                |
+| Worlds Apart                  | Make Them Suffer                |
+| Awaken the Dreamers           | All Shall Perish                |
+| Deathwish                     | Within Destruction              |
+| The Root of All Evil          | Spite                           |
+| Doom                          | Job For A Cowboy                |
+| The Hand of Violence          | Bound in Fear                   |
+| Reclaimer                     | Shadow of Intent                |
+| Melancholy                    | Shadow of Intent                |
+| Misery Sermon                 | Slaughter to Prevail            |
+| Chapters of Misery            | Slaugher to Prevail             |
+| Ascendants                    | Oceano                          |
+| Dissentient                   | Angelmaker                      |
+| AngelMaker                    | Angelmaker                      |
+| Whitechapel                   | Whitechapel                     |
+| The Valley                    | Whitechapel                     |
+| Terminal Redux                | Vektor                          |
+| Outer Isolation               | Vektor                          |
+*** Metal
