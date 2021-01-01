@@ -4,54 +4,25 @@
 (package! zoom)
 (package! org-bullets)
 (package! sexy-monochrome-theme)
+(package! fennel-mode)
+(package! haxe-mode)
+(package! battle-haxe)
 
-;; To install a package with Doom you must declare them here and run 'doom sync'
-;; on the command line, then restart Emacs for the changes to take effect -- or
-;; use 'M-x doom/reload'.
+;; This isn't really a package, it just provides a `haxe-mode' to work with
+;; (use-package haxe-mode
+;;   :mode ("\\.hx\\'" . haxe-mode)
+;;   :no-require t
+;;   :init
+;;   (require 'js)
+;;   (define-derived-mode haxe-mode js-mode "Haxe"
+;;     "Haxe syntax highlighting mode. This is simply using js-mode for now."))
 
-
-;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
-;(package! some-package)
-
-;; To install a package directly from a remote git repo, you must specify a
-;; `:recipe'. You'll find documentation on what `:recipe' accepts here:
-;; https://github.com/raxod502/straight.el#the-recipe-format
-;(package! another-package
-;  :recipe (:host github :repo "username/repo"))
-
-(package! spotify
-  :recipe (:host github :repo "danielfm/spotify.el"))
-
-;; If the package you are trying to install does not contain a PACKAGENAME.el
-;; file, or is located in a subdirectory of the repo, you'll need to specify
-;; `:files' in the `:recipe':
-;(package! this-package
-;  :recipe (:host github :repo "username/repo"
-;           :files ("some-file.el" "src/lisp/*.el")))
-
-;; If you'd like to disable a package included with Doom, you can do so here
-;; with the `:disable' property:
-;(package! builtin-package :disable t)
-
-;; You can override the recipe of a built in package without having to specify
-;; all the properties for `:recipe'. These will inherit the rest of its recipe
-;; from Doom or MELPA/ELPA/Emacsmirror:
-;(package! builtin-package :recipe (:nonrecursive t))
-;(package! builtin-package-2 :recipe (:repo "myfork/package"))
-
-;; Specify a `:branch' to install a package from a particular branch or tag.
-;; This is required for some packages whose default branch isn't 'master' (which
-;; our package manager can't deal with; see raxod502/straight.el#279)
-;(package! builtin-package :recipe (:branch "develop"))
-
-;; Use `:pin' to specify a particular commit to install.
-;(package! builtin-package :pin "1a2b3c4d5e")
-
-
-;; Doom's packages are pinned to a specific commit and updated from release to
-;; release. The `unpin!' macro allows you to unpin single packages...
-;(unpin! pinned-package)
-;; ...or multiple packages
-;(unpin! pinned-package another-pinned-package)
-;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
-;(unpin! t)
+;; (use-package battle-haxe
+;;   :hook (haxe-mode . battle-haxe-mode)
+;;   :bind (("S-<f4>" . #'pop-global-mark) ;To get back after visiting a definition
+;;          :map battle-haxe-mode-map
+;;          ("<f4>" . #'battle-haxe-goto-definition)
+;;          ("<f12>" . #'battle-haxe-helm-find-references))
+;;   :custom
+;;   (battle-haxe-yasnippet-completion-expansion t "Keep this if you want yasnippet to expand completions when it's available.")
+;;   (battle-haxe-immediate-completion nil "Toggle this if you want to immediately trigger completion when typing '.' and other relevant prefixes."))

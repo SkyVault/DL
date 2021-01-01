@@ -1,9 +1,9 @@
 #+TITLE: Project Ideas
-
 * Backlog
 - Fantacy backstory generator
 - Tool to track personal growth using your org files
 
 * WIP
 - EntSnap - tool for creating entities and attaching components to them
-- Skippies Adventure
+- Skippy's Adventure
+- Castlevainia style platformer rpg for android / PC

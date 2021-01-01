@@ -52,7 +52,7 @@
                 ((x-list-fonts "Verdana")         '(:font "Verdana"))
                 ((x-family-fonts "Sans Serif")    '(:family "Sans Serif"))
                 (nil (warn "Cannot find a Sans Serif Font.  Install Source Sans Pro."))))
-         (headline           `(:weight bold)))
+         (headline `(:weight bold)))
 
   (custom-theme-set-faces
     'user
@@ -138,3 +138,6 @@
 
 (defun insert-current-date () (interactive)
     (insert (shell-command-to-string "echo -n $(date +%Y-%m-%d)")))
+
+;; Haxe
+(add-to-list 'auto-mode-alist '("\\.hx\\'" . haxe-mode))
