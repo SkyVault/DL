@@ -15,6 +15,11 @@
 
 (setq doom-theme 'sexy-monochrome)
 
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+(setq c-set-style "k&r")
+(setq c-basic-offset 2)
+
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
@@ -23,7 +28,7 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type 'relative)
+(setq display-line-numbers-type 'normal)
 (setq sgml-quick-keys 'close)
 
 (setq company-dabbrev-downcase 0)
