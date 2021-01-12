@@ -9,5 +9,4 @@ dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XA
 
 mpd &			# music player daemon-you might prefer it as a service though
 wal -R &
-picom --config $HOME/.config/picom/config &		# picom compositor
-dunst &			# dunst for notifications
+dunst -conf ~/.config/dunst/dunstrc &			# dunst for notifications
