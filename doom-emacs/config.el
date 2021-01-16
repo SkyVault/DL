@@ -146,3 +146,6 @@
 
 ;; Haxe
 (add-to-list 'auto-mode-alist '("\\.hx\\'" . haxe-mode))
+
+;; Common Lisp
+(setq inferior-lisp-program "sbcl")
