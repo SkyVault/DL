@@ -2,6 +2,7 @@
 * Backlog
 - Fantacy backstory generator
 - Tool to track personal growth using your org files
+- Digital garden app, grow exotic plants digitally like a tomogotchi, maybe a desktop app?
 
 * WIP
 - EntSnap - tool for creating entities and attaching components to them

@@ -6,3 +6,13 @@
 * DONE fix the group ids blank thing
 * DONE Bug with the emplId
 * TODO Close button based on thread status
+
+done
+12378 MC
+13088 Frontend
+13084
+13386
+13245
+
+todo
+13081 cx

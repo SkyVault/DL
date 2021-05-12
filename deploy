@@ -7,6 +7,7 @@ ln -sfn "$PWD/config/i3blocks/" "$HOME/.config/i3blocks"
 ln -sfn "$PWD/config/zathura/" "$HOME/.config/zathura"
 ln -sfn "$PWD/config/ncmpcpp/" "$HOME/.config/ncmpcpp"
 ln -sfn "$PWD/config/mpd/" "$HOME/.config/mpd"
+ln -sfn "$PWD/config/nvim/" "$HOME/.config/nvim"
 
 ln -sfn "$PWD/zprofile" "$HOME/.zprofile"
 ln -sfn "$PWD/start" "$HOME/.config/start"

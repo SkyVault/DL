@@ -8,3 +8,4 @@
 (package! haxe-mode)
 (package! battle-haxe)
 (package! slime)
+(package! reason-mode)

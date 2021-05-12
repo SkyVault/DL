@@ -1,0 +1,52 @@
+#+TITLE: Notes for Jonathan on his frontend
+* Interfaces vs Types
+
+For functional components, we like to use interfaces over type, type only creates an alias while interface will create a new type, interfaces have nice properties like being able to extend them, or combine them into new types
+
+#+BEGIN_SRC typescript
+  interface A {
+    title: string;
+  }
+
+  interface B<T> {
+    field: T;
+  }
+
+  const MyComp = ({title, field}: A & B<number>) => ...
+  <MyComp test="Hello" field={32}/>
+#+END_SRC
+
+  [[https://blog.logrocket.com/types-vs-interfaces-in-typescript/][Heres a good reference]]
+
+  Using interfaces would allow to avoid using Partial
+
+  AddressSection.tsx:256 - remove || false
+
+  dont need to do propTypes
+
+  we now instead of using the style property and the Theme.Consumer, use makeStyles and createStyles
+
+  #+BEGIN_SRC typescript
+
+import { makeStyles, createStyles } from '@material-ui/core/styles';
+
+const useStyles = createStyles({
+  myButton: {
+    margin: "4px",
+    backgroundColor: "red",
+  }
+});
+
+// Or if you need the theme object
+const useStylesTheme = makeStyles(theme => createStyles({
+    ...
+}))
+
+const MyButton = ({}: BtnProps) => {
+    const styles = useStyles();
+    return (
+      <Button className={`${styles.myButton}`}> Click me </Button>
+    )
+}
+
+  #+END_SRC
