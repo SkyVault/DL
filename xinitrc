@@ -1,3 +1,1 @@
-#!/bin/sh 
-
-exec dwm
+exec i3

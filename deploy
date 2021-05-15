@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# This script symlinks all of the configuration files into the .config directory
+
+## Define locations
+
+CONFIGS="${PWD}/config"
+TARGET_CONFIG_DIR="$HOME/.config"
+
+## Link bashrc
+
+ln -sf "${PWD}/bash_profile" "$HOME/.bash_profile"
+ln -sf "${PWD}/bashrc" "$HOME/.bashrc"
+ln -sf "${PWD}/xinitrc" "$HOME/.xinitrc"
+
+## Symlink configs
+
+mkdir -p "$TARGET_CONFIG_DIR"
+
+pushd "$CONFIGS" > /dev/null
+for file in */; do
+    target=$(echo "$file" | sed 's:/*$::')
+    ln -sf "${CONFIGS}/$file" "$TARGET_CONFIG_DIR/$target"
+    echo "linked: $TARGET_CONFIG_DIR/$target"
+done
+popd > /dev/null

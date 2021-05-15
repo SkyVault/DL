@@ -1,0 +1,21 @@
+#!/bin/bash
+
+set editing-mode vi
+set -o vi
+
+bind -m vi-command 'Control-l: clear-screen'
+bind -m vi-insert 'Control-l: clear-screen' 
+
+bind -m vi-command 'Control-p: history-search-backward'
+bind -m vi-insert 'Control-p: history-search-backward'
+
+bind -m vi-command 'Control-n: history-search-forward'
+bind -m vi-insert 'Control-n: history-search-forward'
+
+[ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
+source /usr/share/nvm/nvm.sh
+source /usr/share/nvm/bash_completion
+source /usr/share/nvm/install-nvm-exec
+
+# opam configuration
+test -r /home/dustin/.opam/opam-init/init.sh && . /home/dustin/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true

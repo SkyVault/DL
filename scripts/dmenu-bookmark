@@ -1,3 +1,0 @@
-#!/bin/bash
-
-echo $(satchel.py -l -u | dmenu -i -l 30)

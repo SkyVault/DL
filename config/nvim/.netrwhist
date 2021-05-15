@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
-let g:netrw_dirhist_4='/home/dustin/Repos/work/appointment-scheduling/stories/01_welcome'
-let g:netrw_dirhist_3='/home/dustin/Repos/work/appointment-scheduling/stories'
-let g:netrw_dirhist_2='/home/dustin/Repos/work/appointment-scheduling'
-let g:netrw_dirhist_1='/home/dustin/Repos/work/appointment-scheduling/src'
