@@ -43,7 +43,7 @@ map <C-x>3 :vsplit<CR>
 "" Tabs
 map <C-x>n :tabnext<CR>
 map <C-x>c :tabnew<CR>
-map <C-x>N :tabprevious<CR>
+map <C-x>p :tabprevious<CR>
 map <C-x>x :tabclose<CR>
 
 " NerdTree Config
@@ -59,7 +59,7 @@ let g:NERDTreeStatusline = ''
 nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 
 " FZF Config
-nnoremap <C-x>p :FZF<CR>
+nnoremap <C-x>f :FZF<CR>
 nnoremap <C-x>b :Buffers<CR>
 nnoremap <C-x>/ :Ag<CR>
 

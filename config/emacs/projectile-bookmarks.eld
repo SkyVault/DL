@@ -1,0 +1,1 @@
+("~/Repos/work/student-planner-frontend/" "~/Repos/DL/")
