@@ -46,6 +46,13 @@ map <C-x>c :tabnew<CR>
 map <C-x>p :tabprevious<CR>
 map <C-x>x :tabclose<CR>
 
+map <C-x>t :tabnew<CR>:term<CR>a
+
+tnoremap <C-x>n <C-\><C-n>:tabnext<CR>
+tnoremap <C-x>c <C-\><C-n>:tabnew<CR>
+tnoremap <C-x>p <C-\><C-n>:tabprevious<CR>
+tnoremap <C-x>x <C-\><C-n>:tabclose<CR>
+
 " NerdTree Config
 
 "" Auto close nvim if NERDTree is the only thing left
