@@ -105,10 +105,11 @@
 (show-paren-mode 1)
 (set-face-attribute 'show-paren-match nil :weight 'extra-bold)
 
+(setq make-backup-files nil)
+
 ;;; Start screen
 
 (setq inhibit-startup-message t)
-(setq initial-scratch-message "Welcome Dustin")
 
 (provide 'config)
 ;;; Config ends here

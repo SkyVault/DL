@@ -13,6 +13,10 @@ ln -sf "${PWD}/bash_profile" "$HOME/.bash_profile"
 ln -sf "${PWD}/bashrc" "$HOME/.bashrc"
 ln -sf "${PWD}/xinitrc" "$HOME/.xinitrc"
 
+### Link zsh
+
+ln -sf "${PWD}/zshenv" "$HOME/.zshenv"
+
 ## Scripts
 
 ln -sf "${PWD}/scripts" "$HOME/.config/scripts"

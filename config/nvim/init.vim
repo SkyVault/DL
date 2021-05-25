@@ -122,6 +122,7 @@ set nowritebackup
 set encoding=utf-8
 set updatetime=300
 set shortmess+=c
+set nowrap
 
 function! s:check_back_space() abort
   let col = col('.') - 1

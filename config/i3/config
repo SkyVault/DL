@@ -21,7 +21,7 @@ exec --no-startup-id dunst
 ## Key bindings
 
 ### Layout bindings
-bindsym $mod+Return exec $TERM
+bindsym $mod+Return exec alacritty
 bindsym $mod+q kill 
 bindsym $mod+d exec --no-startup-id dmenu_run
 
@@ -45,7 +45,7 @@ bindsym $mod+space focus mode_toggle
 
 ### Application launching keybindings
 
-bindsym $mod+b exec --no-startup-id $BROWSER
+bindsym $mod+b exec --no-startup-id qutebrowser
 bindsym $mod+p exec --no-startup-id pavucontrol-qt
 
 ### Workspace keybindings
