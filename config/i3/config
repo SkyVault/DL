@@ -8,9 +8,18 @@ floating_modifier $mod
 
 ## Styles
 
-font pango:monospace 8
+font pango:DejaVu Sans Mono 11
 
-for_window [class="^.*"] border pixel 4
+for_window [class="^.*"] border pixel 2
+
+# class                 border  bground text    indicator child_border
+client.focused          #33BBFF #33BBFF #000000 #33BBFF   #33BBFF
+client.focused_inactive #FFBB55 #FFBB55 #000000 #FFBB55   #FFBB55
+client.unfocused        #333333 #222222 #888888 #292D2E   #222222
+client.urgent           #2F343A #900000 #FFFFFF #900000   #900000
+client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
+
+client.background       #FFFFFF 
 
 ## Auto start applications
 
@@ -86,4 +95,11 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 bar {
 	status_command i3status
 	position top
+  font pango:DejaVu Sans Mono 11
+  separator_symbol ::
+
+  colors {
+    statusline #aaaaaa
+    separator #555555
+  }
 }
