@@ -1,1 +1,1 @@
-("~/Repos/VaultOS/" "~/Repos/work/student-planner-frontend/")
+("~/Repos/VaultOS/")
