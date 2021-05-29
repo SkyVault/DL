@@ -1,1 +1,1 @@
-("~/Repos/VaultOS/")
+("~/quicklisp/local-projects/RealmOfDoom/" "~/Repos/VaultOS/")
