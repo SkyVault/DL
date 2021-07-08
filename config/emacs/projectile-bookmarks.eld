@@ -1,1 +1,1 @@
-("~/quicklisp/local-projects/RealmOfDoom/" "~/Repos/VaultOS/")
+("~/quicklisp/local-projects/beyond-age-rpg/" "~/Repos/VaultOS/" "~/quicklisp/local-projects/cl-raylib/" "~/quicklisp/local-projects/RealmOfDoom/" "~/Repos/test/")

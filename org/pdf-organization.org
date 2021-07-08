@@ -1,0 +1,16 @@
+#+TITLE Design document for the pdf organizer app I want to build
+
+* TODO Set of features for MVP
+
+** TODO Load a json or sql db that contains all of the meta data for the directory of pdfs and books.
+** TODO Sync command for rebuilding the json - will prompt for info about pdfs that aren't defined, otherwise it
+** TODO Will default the values
+** TODO Allow for pdf tagging / directory structure could also be a tag
+** TODO Allow for querying by meta data (title, tag, descrition, author, etc..)
+
+
+* Stretch and future goals
+
+** TODO Make suggestions based on tags
+** TODO Works with other media types including MP3
+** TODO Configurable editor and viewer / player for different files

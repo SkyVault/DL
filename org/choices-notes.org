@@ -1,0 +1,20 @@
+#+TITLE Choices Notes
+
+Have the warnings show up in the choices modal
+
+C stands for choices warning
+show warning icon next to the option title
+
+in the option, show the warning below the units stats
+
+Show it on the print path,
+new section at the bottom, choices warnings
+
+Warnings panel view issue needs to take you to the options modal
+
+Req 5.2 wont work yet, sub choice...
+DOD #7 also
+
+Dynamic true, remove select 0 option text and the courses stat
+
+Add plus sign

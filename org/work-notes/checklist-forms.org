@@ -1,0 +1,105 @@
+#+TITLE: Checklist forms notes
+
+Checklist forms is to-dos
+Checklist item and todo
+checklist item is what the staff has on the backend where as the student sees todos
+
+checklits item code ties it to the form
+
+look at chcklist forms in peoplesoft
+
+datarecord is the table that the form is stored in
+
+staff can go to person checklist to find the response
+
+WEBLIB_HCF_FORM for the services
+
+first form
+H_ASSETT_VERIF
+
+each form will take the same parameters
+
+keys
+student id
+checklist item sits on a checklist (sequence number for checklist)
+sequence number for checklist item
+
+start with Bookstore Authorization, should be easy
+non-filter is the most complex
+
+make the form read only if staff
+check permission list service for this, put in the endpoint (maybe)
+
+WEBLIB_HI_USER GetEndPoints
+check for save endpoints to see if its readonly
+
+once a form is submitted it gets marked with item status (when submitted change to recieved / make it readonly)
+WEBLIB_HCF_FORM xxx <- service will say if form is submittable
+
+* Form info
+  name (iscript common)
+
+  from additional service
+  + contact
+  + due ddate
+  + aid year
+    may have a list of other items
+
+
+* Message Catalog
+    27112
+    each form has its own grouping of messages
+    check utilities/message catalog w/ filtering
+
+    for bookstore
+    251 body
+    252 footer
+
+1. Make the frontend work with the new backend
+2. Make it a standalone app
+3. There are 7 forms
+4. Being able to attach files
+5. Make an upload form
+6. Going to have to query message catalog messages
+
+4 web libs
+
+get 
+	WEBLIB_HCF_FORM
+		ATTACHMENTS (Focus on this)
+
+save
+	WEBLIB_HCF_UPD
+		ATTACHMENTS (Focus on this)
+
+		payload
+		[
+			{
+				"filename": "base64encoded filename",
+				"extension": "txt",
+				"contents": "base64encoded version of filename.txt",
+			}
+		]
+
+states of a checklist item:
+	form w/ attach
+	form w/o attach
+
+	descr w/ attach
+	descr w/o attach
+
+	if type is blank then its a description
+	status has to change after!
+
+Checklist forms > Configuration (TODO Replace with react)
+Checklist forms > Forms Navigation (TODO Replace again with react)
+Campus Community
+
+Person Checklists > Checklist Management Person
+Status R is recieved
+
+
+GetAttachment service to get attachments for a form
+GetFormData will return the data to populate the form if they edited it before
+
+Can't do a transaction on the backend, only a try catch

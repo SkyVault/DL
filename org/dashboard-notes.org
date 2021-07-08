@@ -1,0 +1,12 @@
+#+TITLE Dashboard Notes
+
+* TODO How do we view the warning
+
+* DONE Center units value
+* DONE Requirements should be courses -> look at old dashboard logic
+* DONE Max units button needs to be the one in the units modal
+* DONE Dont allow neg units
+* DONE Zero value for bulk units
+* DONE Bulk units not refreshing page
+* DONE Redundant locks
+* DONE Requirement units

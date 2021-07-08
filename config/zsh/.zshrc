@@ -65,3 +65,8 @@ bindkey -M vicmd v edit-command-line
 
 # Zsh suggestions
 source "$ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
+
+## Path
+export PATH=$PATH:'/var/lib/flatpak/exports/share'
+export PATH=$PATH:'/home/dustin/.local/share/flatpak/exports/share'
+

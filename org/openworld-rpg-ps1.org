@@ -1,0 +1,31 @@
+#+TITLE
+
+
+* Magic
+
+** Lore
+
+  A great alchimest discovered a way to unlock the energy in the universe, he was able to use that energy to create immence blasts of energy, his books survived locked away in his tomb, until it was discovered by an archiologist after the fall of man. After transcribing his notes, he realized that the process to utilize magic was incredibly evil.
+
+** Rules
+
+  frequences of force that make up magic, note this isn't the actual color, the frequences are just mapped into the color spectrum to be able to reason about them easier.
+
+  1. violet (good) (can pull violet force from motion maybe? so like moving water or explosions or something) used mostly for acrobatic skills and other self inflicted magic (strength ect..) or used to augment other spells
+  2. blue push and pull, currents, turbolence and other chaotic forces of nature
+  3. cyan spread AOE modifier
+  4. green health
+  5. yellow fireball and other explosive magic
+  6. orange strength
+  7. red (bad) (only way to get is through life force and blood magic) illegal
+
+  8. black (necromancy) people don't think its real, black energy can't be right? illegal
+
+  9. white (white magic is looked at as a good positive thing, but its dirty secret is it relies on red magic)
+
+     this magic is new, only a few mages have achived the ability to use white magic, they seem good but it turns out
+     they use all magic including red
+
+  crystals and a few other materials can hold the frequences, you need one to cast magic, crystals of different
+  levels can hold more or less energy there should be a 'lense' of some sort that can red shift spells,
+  not sure how that would work :p

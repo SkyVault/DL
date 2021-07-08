@@ -25,7 +25,7 @@ client.background       #FFFFFF
 
 exec --no-startup-id $HOME/.config/screenlayouts/default
 exec --no-startup-id dunst
-# exec --no-startup-id picom
+exec --no-startup-id picom
 
 ## Key bindings
 

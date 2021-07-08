@@ -1,0 +1,7 @@
+#+TITLE TODOS
+
+* DONE Debug DP0020 window bug
+* DONE Build pitt app
+* DONE Convert configured plans to use post requests for filters
+* DONE Configured plans chart tooltip
+* TODO Convert warnings to use slim services

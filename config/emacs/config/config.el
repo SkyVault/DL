@@ -37,7 +37,21 @@
   :config
   (global-set-key (kbd "M-x") 'helm-M-x)
   (global-set-key (kbd "C-x b") 'helm-buffers-list)
-  (global-set-key (kbd "C-x C-f") 'helm-find-files))
+  (global-set-key (kbd "C-x C-f") 'helm-find-files)
+
+  (defvar spacemacs-helm-display-help-buffer-regexp '("\\*.*Helm.*Help.*\\*"))
+  (defvar spacemacs-helm-display-buffer-regexp `("\\*.*helm.*\\*"
+					(display-buffer-in-side-window)
+					(inhibit-same-window . nil)
+					(side . bottom)
+					(window-width . 0.6)
+					(window-height . 0.4)))
+
+  (defun display-helm-at-bottom (buffer &optional _resume)
+  (let ((display-buffer-alist (list spacemacs-helm-display-help-buffer-regexp
+				spacemacs-helm-display-buffer-regexp)))
+(display-buffer buffer)))
+  (setq helm-display-function 'display-helm-at-bottom))
 
 (use-package helm-ag
   :after helm
@@ -193,6 +207,12 @@
   (add-hook 'web-mode-hook #'lsp))
 
 ;; Lisp
+
+(use-package cider
+  :ensure t)
+
+(use-package clojure-mode
+  :ensure t)
 
 (use-package slime
   :ensure t
